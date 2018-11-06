@@ -107,6 +107,7 @@
             this.btnOk.TabIndex = 6;
             this.btnOk.Text = "Valider";
             this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // btnInit
             // 
@@ -116,6 +117,7 @@
             this.btnInit.TabIndex = 7;
             this.btnInit.Text = "Réinitialiser";
             this.btnInit.UseVisualStyleBackColor = true;
+            this.btnInit.Click += new System.EventHandler(this.btnInit_Click);
             // 
             // btnFin
             // 
@@ -125,6 +127,7 @@
             this.btnFin.TabIndex = 8;
             this.btnFin.Text = "J\'ai trouvé le plus court chemin !";
             this.btnFin.UseVisualStyleBackColor = true;
+            this.btnFin.Click += new System.EventHandler(this.btnFin_Click);
             // 
             // lblEnonce
             // 
@@ -141,6 +144,7 @@
             this.treeViewSaisie.Name = "treeViewSaisie";
             this.treeViewSaisie.Size = new System.Drawing.Size(121, 97);
             this.treeViewSaisie.TabIndex = 10;
+            this.treeViewSaisie.Visible = false;
             // 
             // lblArbre
             // 
@@ -150,6 +154,7 @@
             this.lblArbre.Size = new System.Drawing.Size(104, 13);
             this.lblArbre.TabIndex = 12;
             this.lblArbre.Text = "Saisir ici l\'arbre final :";
+            this.lblArbre.Visible = false;
             // 
             // listBoxEnonce
             // 
@@ -163,6 +168,7 @@
             // 
             this.textBoxDepart.Location = new System.Drawing.Point(50, 102);
             this.textBoxDepart.Name = "textBoxDepart";
+            this.textBoxDepart.ReadOnly = true;
             this.textBoxDepart.Size = new System.Drawing.Size(100, 20);
             this.textBoxDepart.TabIndex = 14;
             // 
@@ -188,6 +194,7 @@
             // 
             this.textBoxArrive.Location = new System.Drawing.Point(200, 102);
             this.textBoxArrive.Name = "textBoxArrive";
+            this.textBoxArrive.ReadOnly = true;
             this.textBoxArrive.Size = new System.Drawing.Size(100, 20);
             this.textBoxArrive.TabIndex = 16;
             // 
@@ -199,6 +206,7 @@
             this.btnOkArbre.TabIndex = 18;
             this.btnOkArbre.Text = "Valider";
             this.btnOkArbre.UseVisualStyleBackColor = true;
+            this.btnOkArbre.Visible = false;
             // 
             // btnInitArbre
             // 
@@ -208,6 +216,7 @@
             this.btnInitArbre.TabIndex = 19;
             this.btnInitArbre.Text = "Réinitialiser";
             this.btnInitArbre.UseVisualStyleBackColor = true;
+            this.btnInitArbre.Visible = false;
             // 
             // FormDijkstra
             // 
