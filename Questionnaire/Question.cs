@@ -17,7 +17,7 @@ namespace Questionnaire
         {
             nbQuestion = nbQuestion + 1;
             NumQuestion = nbQuestion;
-            // A COMPLTER !!!
+            // A COMPLETER !!!
         }
     }
 }

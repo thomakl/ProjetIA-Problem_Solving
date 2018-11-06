@@ -13,10 +13,32 @@ namespace Questionnaire
     public partial class FormQuestionnaire : Form
     {
         public Question QuestionActive { get; set; }
+        public List<int> ListeQuestionsSorties { get; set; } // Litse qui contient les questions déjà sorties pour éviter les répétitions
 
         public FormQuestionnaire()
         {
             InitializeComponent();
+
+            // Tirage au sort de la première question
+            Random r = new Random();
+            int numQuestion = r.Next(Question.nbQuestion + 1);
+            ListeQuestionsSorties.Add(numQuestion); // Ajout à la liste pour que la question ne retombe pas
+
+            // QuestionActive => Trouver un moyen de récupérer la question numéro "ques"... 
+
+            // Utiliser la méthode remplireForm pour la question correspondant à numQuestion
+            remplireForm();
+
+        }
+
+        // Méthode qui permet d'écrire la question et ses réponses
+        public void remplireForm()
+        { 
+            lbl_question.Text = QuestionActive.Enonce_question;
+            radioBtt_reponse1.Text = QuestionActive.Liste_reponses[0].Enonce_reponse;
+            radioBtt_reponse2.Text = QuestionActive.Liste_reponses[1].Enonce_reponse;
+            radioBtt_reponse3.Text = QuestionActive.Liste_reponses[2].Enonce_reponse;
+            radioBtt_reponse4.Text = QuestionActive.Liste_reponses[3].Enonce_reponse;
         }
 
         private void lbl_question_Click(object sender, EventArgs e)
@@ -47,7 +69,6 @@ namespace Questionnaire
         private void btt_validation_Click(object sender, EventArgs e)
         {
             // Correction => Voir si l'utilisateur à cocher la bonne réponse, et le corriger s'il a eu faux
-
             if (radioBtt_reponse1.Checked && QuestionActive.Liste_reponses[0].veracite == 1)
             {
                 MessageBox.Show("Vous avez trouvez la bonne réponse");
@@ -84,7 +105,19 @@ namespace Questionnaire
             }
 
             // Chargement d'une nouvelle question
-            Random r = new Random(Question.nbQuestion); // Ca va pas faut continuer...
+            Random r = new Random();
+            int num = r.Next(Question.nbQuestion + 1);
+
+            // Chercher un num qui n'a jamais été choisi, pour s'assurer que l'utilisateur ne passe pas plusieurs fois la même question          
+            while (ListeQuestionsSorties.Contains(num))
+            {
+                num = r.Next(Question.nbQuestion + 1);
+            }
+
+            ListeQuestionsSorties.Add(num);
+        
+            // attribuer à questionActive la question numéro num
+            // ...
         }
     }
 }
