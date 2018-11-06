@@ -11,9 +11,12 @@ using System.Windows.Forms;
 
 namespace Dijstra {
     public partial class FormDijkstra : Form {
+        //ATTRIBUTS ET PROPRIETES
+        public int Points { get; private set; }
+
+        //CONSTRUCTEUR
         public FormDijkstra() {
             InitializeComponent();
-
 
             //POUR AFFICHER LE GRAPHE (ENONCE)
             StreamReader monStreamReader = new StreamReader("graphe1.txt"); //à changer plus tard
@@ -24,20 +27,20 @@ namespace Dijstra {
             while (ligne[i] != ':') {
                 i++;
             }
-            string strnbnoeuds = "";
+            string strNbNoeuds = "";
             i++; // On dépasse le ":"
             while (ligne[i] == ' ') {
                 i++; // on saute les blancs éventuels
             }
             while (i < ligne.Length) {
-                strnbnoeuds = strnbnoeuds + ligne[i];
+                strNbNoeuds = strNbNoeuds + ligne[i];
                 i++;
             }
-            int nbnodes = Convert.ToInt32(strnbnoeuds);
+            int nbNoeuds = Convert.ToInt32(strNbNoeuds);
 
-            double[,] matrice = new double[nbnodes, nbnodes];
-            for (i = 0; i < nbnodes; i++) {
-                for (int j = 0; j < nbnodes; j++) {
+            double[,] matrice = new double[nbNoeuds, nbNoeuds];
+            for (i = 0; i < nbNoeuds; i++) {
+                for (int j = 0; j < nbNoeuds; j++) {
                     matrice[i, j] = -1;
                 }
             }
@@ -90,8 +93,57 @@ namespace Dijstra {
 
             // Fermeture du StreamReader (obligatoire) 
             monStreamReader.Close();
+
+
+            // Choix des noeuds initial et d'arrivée
+            Random r = new Random();
+            int noeudInitial = r.Next(nbNoeuds);
+            int noeudArrivee = r.Next(nbNoeuds);
+            if (noeudInitial == noeudArrivee) { // pour éviter les cas d'égalités
+                noeudArrivee = (noeudArrivee + 1) % nbNoeuds;
+            }
+            textBoxDepart.Text = noeudInitial.ToString();
+            textBoxArrive.Text = noeudArrivee.ToString();
+
+
+            //Remplissage des noeuds ouverts et fermés
+            txtBoxFrep.Text = "{}\r\n";
+            txtBoxOrep.Text = "{" + noeudInitial + "}\r\n";
         }
 
 
+        //METHODES
+        private void btnFin_Click(object sender, EventArgs e) {
+            lblArbre.Visible = true;
+            btnInitArbre.Visible = true;
+            btnOkArbre.Visible = true;
+            treeViewSaisie.Visible = true;
+            btnInit.Visible = false;
+            btnOk.Visible = false;
+        }
+
+
+
+        private void btnInit_Click(object sender, EventArgs e) {
+            txtBoxFsaisie.Text = "";
+            txtBoxOsaisie.Text = "";
+        }
+
+
+
+        private void btnOk_Click(object sender, EventArgs e) {
+            //Ici tester si la ligne validée est juste
+            bool repJuste = false;
+
+
+            if (repJuste) {
+                txtBoxFrep.Text += "{" + txtBoxFsaisie.Text + "}\r\n";
+                txtBoxOrep.Text += "{" + txtBoxOsaisie.Text + "}\r\n";
+                txtBoxFsaisie.Text = "";
+                txtBoxOsaisie.Text = "";
+            } else {
+                MessageBox.Show("Réponse fausse !");
+            }
+        }
     }
 }
