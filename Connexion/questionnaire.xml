@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<questionnaire>
+  <question>
+    <titreQuestion>Laquelle de ces entreprises a mis au point la premiere voiture autonome ?</titreQuestion>
+    <proposition>Tesla</proposition>
+    <proposition>Google</proposition>
+    <proposition>La voiture pleinement autonome n'existe pas</proposition>
+    <proposition>Uber</proposition>
+    <reponse>La voiture pleinement autonome n'existe pas</reponse>
+  </question>
+  <question>
+    <titreQuestion>Qu'est ce que l'intelligence artificielle ?</titreQuestion>
+    <proposition>Mettre son intelligence dans un ordinateur</proposition>
+    <proposition>Programmer avec sa propre intelligence</proposition>
+    <proposition>propositionréer une machine intelligente</proposition>
+    <proposition>Mettre plus de mémoire dans un ordinateur</proposition>
+    <reponse>propositionréer une machine intelligente</reponse>
+  </question>
+  <question>
+    <titreQuestion>Quel est le nom des programmes qui simulent le processus de pensées des êtres humains ?</titreQuestion>
+    <proposition>La logique humaine</proposition>
+    <proposition>La raison expert</proposition>
+    <proposition>Le système expert</proposition>
+    <proposition>Les informations personnelles</proposition>
+    <reponse>Le système expert</reponse>
+  </question>
+</questionnaire> 
