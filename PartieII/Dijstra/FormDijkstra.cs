@@ -19,7 +19,7 @@ namespace Dijstra {
             InitializeComponent();
 
             //POUR AFFICHER LE GRAPHE (ENONCE)
-            StreamReader monStreamReader = new StreamReader("graphe1.txt"); //à changer plus tard
+            //StreamReader monStreamReader = new StreamReader("graphe1.txt"); //à changer plus tard
 
             // 1ère ligne : nombre de noeuds du graphe
             string ligne = monStreamReader.ReadLine();
