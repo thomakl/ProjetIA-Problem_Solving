@@ -1,4 +1,5 @@
-﻿<?xml version="1.0" encoding="UTF-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
 <questionnaire>
   <question>
     <titreQuestion>Laquelle de ces entreprises a mis au point la premiere voiture autonome ?</titreQuestion>
@@ -24,4 +25,4 @@
     <proposition>Les informations personnelles</proposition>
     <reponse>Le système expert</reponse>
   </question>
-</questionnaire> 
+</questionnaire>

@@ -13,19 +13,36 @@ namespace Questionnaire
 {
     public partial class FormQuestionnaire : Form
     {
-        public Question QuestionActive { get; set; }
-        public List<int> ListeQuestionsSorties { get; set; } // Litse qui contient les questions déjà sorties pour éviter les répétitions
+        public Question QuestionActive { get; set; } // Question qui est affichée sur le form
+        public List<int> ListeQuestionsSorties { get; set; } // Liste qui contient les questions déjà sorties pour éviter les répétitions
+        public int note { get; set; } // Note de l'utilisateur
+
 
         public FormQuestionnaire()
         {
             InitializeComponent();
 
-            // numéro de la question
+            ListeQuestionsSorties = new List<int>();
+            note = 0;
+
+            RemplirQuestionActive();
+
+            remplirForm();
+
+        }
+
+        public void RemplirQuestionActive()
+        {
+            // Création d'un bombre aléatoire qui permettra de choisir une question
             Random r = new Random();
-            //int numeroQuestion = r.Next(RecupererNbQuestion() + 1);
-            int numeroQuestion = 1;
-            List<int> ListeQuestionsSorties = new List<int>();
-            ListeQuestionsSorties.Add(numeroQuestion); // Ajout à la liste pour que la question ne retombe pas            
+            int numeroQuestion = r.Next(RecupererNbQuestion());
+
+            // Chercher un numeroQuestion qui n'a jamais été choisi         
+            while (ListeQuestionsSorties.Contains(numeroQuestion))
+            {
+                numeroQuestion = r.Next(RecupererNbQuestion() + 1);
+            }
+            ListeQuestionsSorties.Add(numeroQuestion);
 
             // Obtenir la question correspondant à numeroQuestion
             XmlNode question = RecupererFichier().GetElementsByTagName("question")[numeroQuestion];
@@ -40,36 +57,59 @@ namespace Questionnaire
             XmlNode reponse = question.SelectSingleNode("reponse");
 
             // Création de la question et des réponses
-            Reponse r1 = new Reponse(propositions[0].InnerText, 0);
-            Reponse r2 = new Reponse(propositions[1].InnerText, 0);
-            Reponse r3 = new Reponse(propositions[2].InnerText, 0);
-            Reponse rv = new Reponse(reponse.InnerText, 1);
-            QuestionActive = new Question(titreQuestion.InnerText, r1, r2, r3, rv);
+            Reponse r1;
+            Reponse r2;
+            Reponse r3;
+            Reponse r4;
+            if (propositions[0].InnerText == reponse.InnerText)
+            {
+                r1 = new Reponse(propositions[0].InnerText, 1);
+                r2 = new Reponse(propositions[1].InnerText, 0);
+                r3 = new Reponse(propositions[2].InnerText, 0);
+                r4 = new Reponse(propositions[3].InnerText, 0);
+            }
+            else if (propositions[1].InnerText == reponse.InnerText)
+            {
+                r1 = new Reponse(propositions[0].InnerText, 0);
+                r2 = new Reponse(propositions[1].InnerText, 1);
+                r3 = new Reponse(propositions[2].InnerText, 0);
+                r4 = new Reponse(propositions[3].InnerText, 0);
+            }
+            else if (propositions[2].InnerText == reponse.InnerText)
+            {
+                r1 = new Reponse(propositions[0].InnerText, 0);
+                r2 = new Reponse(propositions[1].InnerText, 0);
+                r3 = new Reponse(propositions[2].InnerText, 1);
+                r4 = new Reponse(propositions[3].InnerText, 0);
+            }
+            else
+            {
+                r1 = new Reponse(propositions[0].InnerText, 0);
+                r2 = new Reponse(propositions[1].InnerText, 0);
+                r3 = new Reponse(propositions[2].InnerText, 0);
+                r4 = new Reponse(propositions[3].InnerText, 1);
+            }
 
-            // Utiliser la méthode remplireForm pour la question correspondant à numQuestion
-            remplirForm();
-
+            QuestionActive = new Question(titreQuestion.InnerText, r1, r2, r3, r4);
         }
 
-        // Récupérer le fichier Xml
+        // Permet de récupérer le fichier XML où sont contenues les questions et les réponses
         public XmlDocument RecupererFichier()
         {
             XmlDocument questionnaire = new XmlDocument();
             questionnaire.Load("questionnaire.xml");
-
             return questionnaire;
         }
 
-        // Recuperer le nombre de question
+        // Recuperer le nombre de questions contenues dans le fichier XML
         public int RecupererNbQuestion()
         {
             int nbQuestion = RecupererFichier().GetElementsByTagName("question").Count;
-
             return nbQuestion;
         }
         // Méthode qui permet d'écrire la question et ses réponses
         public void remplirForm()
-        { 
+        {
             lbl_question.Text = QuestionActive.Enonce_question;
             radioBtt_reponse1.Text = QuestionActive.Liste_reponses[0].Enonce_reponse;
             radioBtt_reponse2.Text = QuestionActive.Liste_reponses[1].Enonce_reponse;
@@ -108,18 +148,22 @@ namespace Questionnaire
             if (radioBtt_reponse1.Checked && QuestionActive.Liste_reponses[0].veracite == 1)
             {
                 MessageBox.Show("Vous avez trouvez la bonne réponse");
+                note = note + 1;
             }
             else if (radioBtt_reponse2.Checked && QuestionActive.Liste_reponses[1].veracite == 1)
             {
                 MessageBox.Show("Vous avez trouvez la bonne réponse");
+                note = note + 1;
             }
             else if (radioBtt_reponse3.Checked && QuestionActive.Liste_reponses[2].veracite == 1)
             {
                 MessageBox.Show("Vous avez trouvez la bonne réponse");
+                note = note + 1;
             }
             else if (radioBtt_reponse4.Checked && QuestionActive.Liste_reponses[3].veracite == 1)
             {
                 MessageBox.Show("Vous avez trouvez la bonne réponse");
+                note = note + 1;
             }
             else
             {
@@ -137,24 +181,21 @@ namespace Questionnaire
                 }
                 numReponseJuste = numReponseJuste + 1;
 
-                MessageBox.Show("Vous avez échouez... La bonne réponse était la réponse : " + numReponseJuste);
+                MessageBox.Show("Vous avez échouez... La bonne réponse était la réponse " + numReponseJuste + " :\n" + QuestionActive.Liste_reponses[numReponseJuste - 1].Enonce_reponse);
             }
 
-            // Chargement d'une nouvelle question
-
-            Random r = new Random();
-            int num = r.Next(1);
-
-            // Chercher un num qui n'a jamais été choisi, pour s'assurer que l'utilisateur ne passe pas plusieurs fois la même question          
-            while (ListeQuestionsSorties.Contains(num))
+            // Compter le nombre de question déjà réalisé par le joueur, si le joueur a fait 20 questions, quitter le form
+            if (ListeQuestionsSorties.Count() == 20)
             {
-                num = r.Next(RecupererNbQuestion() + 1);
+                MessageBox.Show("Vous avez terminé le test ! Félicitations !\n Votre note est de : " + note + "/20");
+                Application.Exit();
             }
-
-            ListeQuestionsSorties.Add(num);
-        
-            // attribuer à questionActive la question numéro num
-            // ...
+            else
+            {
+                // Passer à la question suivante
+                RemplirQuestionActive();
+                remplirForm();
+            }
         }
     }
 }
