@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace Questionnaire
 {
@@ -19,20 +20,55 @@ namespace Questionnaire
         {
             InitializeComponent();
 
-            // Tirage au sort de la première question
+            // numéro de la question
             Random r = new Random();
-            int numQuestion = r.Next(Question.nbQuestion + 1);
-            ListeQuestionsSorties.Add(numQuestion); // Ajout à la liste pour que la question ne retombe pas
+            //int numeroQuestion = r.Next(RecupererNbQuestion() + 1);
+            int numeroQuestion = 1;
+            List<int> ListeQuestionsSorties = new List<int>();
+            ListeQuestionsSorties.Add(numeroQuestion); // Ajout à la liste pour que la question ne retombe pas            
 
-            // QuestionActive => Trouver un moyen de récupérer la question numéro "ques"... 
+            // Obtenir la question correspondant à numeroQuestion
+            XmlNode question = RecupererFichier().GetElementsByTagName("question")[numeroQuestion];
+
+            // Donne le titre de la question
+            XmlNode titreQuestion = question.SelectSingleNode("titreQuestion");
+
+            //Donne les propositions de la question
+            XmlNodeList propositions = question.SelectNodes("proposition");
+
+            //// Donne la réponse de la question
+            XmlNode reponse = question.SelectSingleNode("reponse");
+
+            // Création de la question et des réponses
+            Reponse r1 = new Reponse(propositions[0].InnerText, 0);
+            Reponse r2 = new Reponse(propositions[1].InnerText, 0);
+            Reponse r3 = new Reponse(propositions[2].InnerText, 0);
+            Reponse rv = new Reponse(reponse.InnerText, 1);
+            QuestionActive = new Question(titreQuestion.InnerText, r1, r2, r3, rv);
 
             // Utiliser la méthode remplireForm pour la question correspondant à numQuestion
-            remplireForm();
+            remplirForm();
 
         }
 
+        // Récupérer le fichier Xml
+        public XmlDocument RecupererFichier()
+        {
+            XmlDocument questionnaire = new XmlDocument();
+            questionnaire.Load("questionnaire.xml");
+
+            return questionnaire;
+        }
+
+        // Recuperer le nombre de question
+        public int RecupererNbQuestion()
+        {
+            int nbQuestion = RecupererFichier().GetElementsByTagName("question").Count;
+
+            return nbQuestion;
+        }
         // Méthode qui permet d'écrire la question et ses réponses
-        public void remplireForm()
+        public void remplirForm()
         { 
             lbl_question.Text = QuestionActive.Enonce_question;
             radioBtt_reponse1.Text = QuestionActive.Liste_reponses[0].Enonce_reponse;
@@ -105,13 +141,14 @@ namespace Questionnaire
             }
 
             // Chargement d'une nouvelle question
+
             Random r = new Random();
-            int num = r.Next(Question.nbQuestion + 1);
+            int num = r.Next(1);
 
             // Chercher un num qui n'a jamais été choisi, pour s'assurer que l'utilisateur ne passe pas plusieurs fois la même question          
             while (ListeQuestionsSorties.Contains(num))
             {
-                num = r.Next(Question.nbQuestion + 1);
+                num = r.Next(RecupererNbQuestion() + 1);
             }
 
             ListeQuestionsSorties.Add(num);

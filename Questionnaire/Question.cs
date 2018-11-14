@@ -9,15 +9,16 @@ namespace Questionnaire
     public class Question
     {
         public string Enonce_question { get; set; }
-        public int NumQuestion { get; set; }
         public List<Reponse> Liste_reponses { get; set; }
-        public static int nbQuestion { get; private set; }
 
-        public Question()
+        public Question(string q, Reponse r1, Reponse r2, Reponse r3, Reponse rv)
         {
-            nbQuestion = nbQuestion + 1;
-            NumQuestion = nbQuestion;
-            // A COMPLETER !!!
+            Enonce_question = q;
+            Liste_reponses = new List<Reponse>();
+            Liste_reponses.Add(r1);
+            Liste_reponses.Add(r2);
+            Liste_reponses.Add(r3);
+            Liste_reponses.Add(rv);
         }
     }
 }
