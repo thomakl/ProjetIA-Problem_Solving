@@ -97,7 +97,7 @@ namespace Questionnaire
         public XmlDocument RecupererFichier()
         {
             XmlDocument questionnaire = new XmlDocument();
-            questionnaire.Load("questionnaire.xml");
+            questionnaire.Load("..\\..\\questionnaire.xml");
             return questionnaire;
         }
 
