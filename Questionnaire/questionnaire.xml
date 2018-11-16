@@ -48,7 +48,7 @@
     <proposition>Gyromètre</proposition>
     <proposition>GPS</proposition>
     <reponse>Odomètre</reponse>
-  </questiion>
+  </question>
     <question>
     <titreQuestion>Donner un exemple de capteur permettant d'obtenir des informations extéroceptive : </titreQuestion>
     <proposition>Niveau de charge de batterie</proposition>
