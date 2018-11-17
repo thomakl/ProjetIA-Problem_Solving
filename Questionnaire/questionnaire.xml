@@ -2,7 +2,7 @@
 
 <questionnaire>
   <question>
-    <titreQuestion>Laquelle de ces entreprises a mis au point la premiere voiture autonome ?</titreQuestion>
+    <titreQuestion>Laquelle de ces entreprises a mis au point la première voiture autonome ?</titreQuestion>
     <proposition>Tesla</proposition>
     <proposition>Google</proposition>
     <proposition>La voiture pleinement autonome n'existe pas</proposition>
@@ -10,7 +10,7 @@
     <reponse>La voiture pleinement autonome n'existe pas</reponse>
   </question>
   <question>
-    <titreQuestion>Qu'est ce que l'intelligence artificielle ?</titreQuestion>
+    <titreQuestion>Qu'est-ce que l'intelligence artificielle ?</titreQuestion>
     <proposition>Mettre son intelligence dans un ordinateur</proposition>
     <proposition>Programmer avec sa propre intelligence</proposition>
     <proposition>Créer une machine intelligente</proposition>
@@ -18,14 +18,14 @@
     <reponse>Créer une machine intelligente</reponse>
   </question>
   <question>
-    <titreQuestion>Quel est le nom des programmes qui simulent le processus de pensées des êtres humains ?</titreQuestion>
+    <titreQuestion>Quel est le nom des programmes qui simulent le processus de penser des êtres humains ?</titreQuestion>
     <proposition>La logique humaine</proposition>
     <proposition>La raison expert</proposition>
     <proposition>Le système expert</proposition>
     <proposition>Les informations personnelles</proposition>
     <reponse>Le système expert</reponse>
   </question>
-    <question>
+  <question>
     <titreQuestion>Qu'est-ce qu'une matrice adjacente ?</titreQuestion>
     <proposition>La représentation simple d'un graphe</proposition>
     <proposition>La matrice complémentaire d'une matrice d'entraînement</proposition>
@@ -41,7 +41,7 @@
     <proposition>Lors d'un repérage d'élément par apprentissage non supervisé</proposition>
     <reponse>Dans la théorie des jeux</reponse>
   </question>
-    <question>
+  <question>
     <titreQuestion>Donner un exemple de capteur permettant d'obtenir des informations propioceptives : </titreQuestion>
     <proposition>LIDAR</proposition>
     <proposition>Odomètre</proposition>
@@ -49,7 +49,7 @@
     <proposition>GPS</proposition>
     <reponse>Odomètre</reponse>
   </question>
-    <question>
+  <question>
     <titreQuestion>Donner un exemple de capteur permettant d'obtenir des informations extéroceptive : </titreQuestion>
     <proposition>Niveau de charge de batterie</proposition>
     <proposition>Odomètre</proposition>
@@ -57,23 +57,23 @@
     <proposition>Capteur de pression</proposition>
     <reponse>Capteur de pression</reponse>
   </question>
-    <question>
+  <question>
     <titreQuestion>Qu'est-ce qu'un amer ? </titreQuestion>
     <proposition>Un guide dans l'environnement du robot</proposition>
-    <proposition>Un objet que le robot doit éviter</proposition>
-    <proposition>Un objet qui permet de contrôler un robot</proposition>
+    <proposition>Un obstacle que le robot doit éviter</proposition>
+    <proposition>Une manette qui permet de contrôler un robot</proposition>
     <proposition>Un objet qui se connecte à un robot</proposition>
     <reponse>Un guide dans l'environnement du robot</reponse>
   </question>
-      <question>
-    <titreQuestion>D'où vient le terme "robot" </titreQuestion>
+  <question>
+    <titreQuestion>D'où vient le terme "robot" ?</titreQuestion>
     <proposition>"Robotae" qui vient du latin et qui signifie "esclave"</proposition>
     <proposition>"Robota" qui vient du tchèque et qui signifie "travail"</proposition>
     <proposition>"Rob Oto" qui est le créateur du premier robot</proposition>
     <proposition>"Roba" qui vient du russe est signifie "machine"</proposition>
     <reponse>"Robota" qui vient du tchèque et qui signifie "travail"</reponse>
   </question>
-        <question>
+  <question>
     <titreQuestion>Parmis les tâches suivantes, laquelle ne peut pas être effectuée par une IA ?</titreQuestion>
     <proposition>Perception visuelle</proposition>
     <proposition>Reconnaissance de voix</proposition>
@@ -81,7 +81,7 @@
     <proposition>Auncune des réponses</proposition>
     <reponse>Auncune des réponses</reponse>
   </question>
-          <question>
+  <question>
     <titreQuestion>Laquelle de ces propositions à la possibilité de substituer les humains dans une tâche physique seulement ? </titreQuestion>
     <proposition>Deep Learning</proposition>
     <proposition>Robotique</proposition>
@@ -89,15 +89,15 @@
     <proposition>Intelligence artificielle</proposition>
     <reponse>Robotique</reponse>
   </question>
-            <question>
-    <titreQuestion>Un servo-moteur comprend : </titreQuestion>
+  <question>
+    <titreQuestion>Que comprend un servo-moteur ? </titreQuestion>
     <proposition>Un moteur électrique</proposition>
     <proposition>Un capteur</proposition>
     <proposition>Un asservissement électronique</proposition>
     <proposition>Toutes les réponses</proposition>
     <reponse>Toutes les réponses</reponse>
   </question>
-              <question>
+  <question>
     <titreQuestion>Parmis les capteurs suivants, lequel permet de calculer la distance entre un robot et les objets environnants ? </titreQuestion>
     <proposition>LIDAR</proposition>
     <proposition>GPS</proposition>
@@ -105,7 +105,7 @@
     <proposition>Microphone</proposition>
     <reponse>LIDAR</reponse>
   </question>
-                <question>
+  <question>
     <titreQuestion>Quelle est a définition d'une IA Forte ? </titreQuestion>
     <proposition>Un ensemble de programme informatique qui produisent des résultats qui seraient considérés comme reflétant l'intelligence s'il étaient généréspar des humains</proposition>
     <proposition>Un programme avec autant de conscience et de personnalité que des humains</proposition>
@@ -113,7 +113,7 @@
     <proposition>Toutes les réponses</proposition>
     <reponse>Un programme avec autant de conscience et de personnalité que des humains</reponse>
   </question>
-   <question>
+  <question>
     <titreQuestion>Quelle est a définition d'une IA Faible ? </titreQuestion>
     <proposition>Un programme avec un taux de prédiction faible</proposition>
     <proposition>L'incarnation des capacités intellectuelles humaines dans un ordinateur</proposition>
@@ -121,7 +121,7 @@
     <proposition>Un programme partiellement intelligent mais ne pouvant pas obtenir la conscience humaine</proposition>
     <reponse>Un programme partiellement intelligent mais ne pouvant pas obtenir la conscience humaine</reponse>
   </question>
-     <question>
+  <question>
     <titreQuestion>Qu'est-ce qu'une IA Data Based ? </titreQuestion>
     <proposition>Un programme de perception (reconnaissance visuelle, etc)</proposition>
     <proposition>Un arbre de décisions</proposition>
@@ -129,7 +129,7 @@
     <proposition>Un système expert</proposition>
     <reponse>Un programme basé sur l'apprentissage automatique</reponse>
   </question>
-       <question>
+  <question>
     <titreQuestion>Laquelle de ces propositions est correcte concernant la vision par ordinateur ? </titreQuestion>
     <proposition>Les robots peuvent transmettre des images en temps réel vers un serveur distant pour les analyser</proposition>
     <proposition>Des ordinateurs comprennent les images numériques et peuvent convertir les données d'un monde réel vers une version numérique et symbolique d'information</proposition>
@@ -137,15 +137,7 @@
     <proposition>Les robots ont la capacité d'intercation avec les langues huamines et arrivent à comprendre</proposition>
     <reponse>Des ordinateurs comprennent les images numériques et peuvent convertir les données d'un monde réel vers une version numérique et symbolique d'information</reponse>
   </question>
-       <question>
-    <titreQuestion>Qu'est-ce que l'intelligence articielle ? </titreQuestion>
-    <proposition>Mettre son intelligence dans un ordinateur</proposition>
-    <proposition>Programmer avec sa propre intelligence</proposition>
-    <proposition>Créer une machine intelligente</proposition>
-    <proposition>Mettre plus de mémoire dans un ordinateur</proposition>
-    <reponse>Créer une machine intelligente</reponse>
-  </question>
-         <question>
+  <question>
     <titreQuestion>Parmis les domaines suivants, lesquels ont permis un pic de l'intelligence artificielle ? </titreQuestion>
     <proposition>La plannification</proposition>
     <proposition>Les jeux vidéos</proposition>
@@ -153,36 +145,28 @@
     <proposition>Toutes les réponses</proposition>
     <reponse>Toutes les réponses</reponse>
   </question>
-           <question>
-    <titreQuestion>Quel est le terme utilisé pour décrire ka part de jugement ou de bon sens dans la résolution de problèmes ? </titreQuestion>
+  <question>
+    <titreQuestion>Quel est le terme utilisé pour décrire la part de jugement ou de bon sens dans la résolution de problèmes ? </titreQuestion>
     <proposition>Heuristique</proposition>
     <proposition>Critique</proposition>
     <proposition>Basé sur la valeur</proposition>
     <proposition>Analytique</proposition>
     <reponse>Heuristique</reponse>
   </question>
-             <question>
-    <titreQuestion>Quel est le nom des programmes qui simulent le processus de penser des êtres humains ? </titreQuestion>
-    <proposition>La logique humaine</proposition>
-    <proposition>La raison expert</proposition>
-    <proposition>Le système expert</proposition>
-    <proposition>Les informations personnelles</proposition>
-    <reponse>Le système expert</reponse>
-      </question>
-    <question>
+  <question>
     <titreQuestion>Parmis les propositions suivantes, quelle est la tâche mieux réalisépar les hommes que par les ordinateurs ? </titreQuestion>
     <proposition>Reconnaître l'importance relative</proposition>
     <proposition>Trouver des similitudes</proposition>
     <proposition>Résoudre des ambiguïtés</proposition>
     <proposition>Toutes les réponses</proposition>
     <reponse>Toutes les réponses</reponse>
-        </question>
-        <question>
+  </question>
+  <question>
     <titreQuestion>Le but de l'IA est-il de construire des systèmes qui présentent un comportement intelligent ? </titreQuestion>
     <proposition>Oui</proposition>
     <proposition>Non</proposition>
     <proposition>Peut-être</proposition>
     <proposition>46</proposition>
     <reponse>Oui</reponse>
-    </question>
+  </question>
 </questionnaire>

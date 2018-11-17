@@ -34,24 +34,28 @@
             this.radioBtt_reponse3 = new System.Windows.Forms.RadioButton();
             this.radioBtt_reponse2 = new System.Windows.Forms.RadioButton();
             this.btt_validation = new System.Windows.Forms.Button();
+            this.lbl_numQuestion = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbl_question
             // 
             this.lbl_question.AutoSize = true;
-            this.lbl_question.Location = new System.Drawing.Point(152, 135);
+            this.lbl_question.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_question.Location = new System.Drawing.Point(58, 114);
             this.lbl_question.Name = "lbl_question";
-            this.lbl_question.Size = new System.Drawing.Size(47, 13);
+            this.lbl_question.Size = new System.Drawing.Size(69, 19);
             this.lbl_question.TabIndex = 0;
             this.lbl_question.Text = "question";
             this.lbl_question.Click += new System.EventHandler(this.lbl_question_Click);
             // 
             // radioBtt_reponse1
             // 
+            this.radioBtt_reponse1.AutoEllipsis = true;
             this.radioBtt_reponse1.AutoSize = true;
-            this.radioBtt_reponse1.Location = new System.Drawing.Point(72, 188);
+            this.radioBtt_reponse1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioBtt_reponse1.Location = new System.Drawing.Point(62, 162);
             this.radioBtt_reponse1.Name = "radioBtt_reponse1";
-            this.radioBtt_reponse1.Size = new System.Drawing.Size(69, 17);
+            this.radioBtt_reponse1.Size = new System.Drawing.Size(76, 18);
             this.radioBtt_reponse1.TabIndex = 1;
             this.radioBtt_reponse1.TabStop = true;
             this.radioBtt_reponse1.Text = "reponse1";
@@ -60,10 +64,12 @@
             // 
             // radioBtt_reponse4
             // 
+            this.radioBtt_reponse4.AutoEllipsis = true;
             this.radioBtt_reponse4.AutoSize = true;
-            this.radioBtt_reponse4.Location = new System.Drawing.Point(72, 309);
+            this.radioBtt_reponse4.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioBtt_reponse4.Location = new System.Drawing.Point(62, 283);
             this.radioBtt_reponse4.Name = "radioBtt_reponse4";
-            this.radioBtt_reponse4.Size = new System.Drawing.Size(69, 17);
+            this.radioBtt_reponse4.Size = new System.Drawing.Size(76, 18);
             this.radioBtt_reponse4.TabIndex = 2;
             this.radioBtt_reponse4.TabStop = true;
             this.radioBtt_reponse4.Text = "reponse4";
@@ -72,10 +78,12 @@
             // 
             // radioBtt_reponse3
             // 
+            this.radioBtt_reponse3.AutoEllipsis = true;
             this.radioBtt_reponse3.AutoSize = true;
-            this.radioBtt_reponse3.Location = new System.Drawing.Point(72, 268);
+            this.radioBtt_reponse3.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioBtt_reponse3.Location = new System.Drawing.Point(62, 242);
             this.radioBtt_reponse3.Name = "radioBtt_reponse3";
-            this.radioBtt_reponse3.Size = new System.Drawing.Size(69, 17);
+            this.radioBtt_reponse3.Size = new System.Drawing.Size(76, 18);
             this.radioBtt_reponse3.TabIndex = 3;
             this.radioBtt_reponse3.TabStop = true;
             this.radioBtt_reponse3.Text = "reponse3";
@@ -84,10 +92,12 @@
             // 
             // radioBtt_reponse2
             // 
+            this.radioBtt_reponse2.AutoEllipsis = true;
             this.radioBtt_reponse2.AutoSize = true;
-            this.radioBtt_reponse2.Location = new System.Drawing.Point(72, 228);
+            this.radioBtt_reponse2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioBtt_reponse2.Location = new System.Drawing.Point(62, 202);
             this.radioBtt_reponse2.Name = "radioBtt_reponse2";
-            this.radioBtt_reponse2.Size = new System.Drawing.Size(69, 17);
+            this.radioBtt_reponse2.Size = new System.Drawing.Size(76, 18);
             this.radioBtt_reponse2.TabIndex = 4;
             this.radioBtt_reponse2.TabStop = true;
             this.radioBtt_reponse2.Text = "reponse2";
@@ -96,19 +106,36 @@
             // 
             // btt_validation
             // 
-            this.btt_validation.Location = new System.Drawing.Point(333, 391);
+            this.btt_validation.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btt_validation.AutoSize = true;
+            this.btt_validation.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btt_validation.Location = new System.Drawing.Point(251, 347);
             this.btt_validation.Name = "btt_validation";
-            this.btt_validation.Size = new System.Drawing.Size(75, 23);
+            this.btt_validation.Size = new System.Drawing.Size(94, 37);
             this.btt_validation.TabIndex = 5;
             this.btt_validation.Text = "Validation";
             this.btt_validation.UseVisualStyleBackColor = true;
             this.btt_validation.Click += new System.EventHandler(this.btt_validation_Click);
             // 
+            // lbl_numQuestion
+            // 
+            this.lbl_numQuestion.AutoSize = true;
+            this.lbl_numQuestion.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_numQuestion.Location = new System.Drawing.Point(23, 114);
+            this.lbl_numQuestion.Name = "lbl_numQuestion";
+            this.lbl_numQuestion.Size = new System.Drawing.Size(29, 19);
+            this.lbl_numQuestion.TabIndex = 6;
+            this.lbl_numQuestion.Text = "nb";
+            this.lbl_numQuestion.Click += new System.EventHandler(this.lbl_numQuestion_Click);
+            // 
             // FormQuestionnaire
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(619, 535);
+            this.ClientSize = new System.Drawing.Size(619, 415);
+            this.Controls.Add(this.lbl_numQuestion);
             this.Controls.Add(this.btt_validation);
             this.Controls.Add(this.radioBtt_reponse2);
             this.Controls.Add(this.radioBtt_reponse3);
@@ -130,6 +157,7 @@
         private System.Windows.Forms.RadioButton radioBtt_reponse3;
         private System.Windows.Forms.RadioButton radioBtt_reponse2;
         private System.Windows.Forms.Button btt_validation;
+        private System.Windows.Forms.Label lbl_numQuestion;
     }
 }
 

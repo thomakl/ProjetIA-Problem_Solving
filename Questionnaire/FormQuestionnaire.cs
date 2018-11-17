@@ -15,7 +15,7 @@ namespace Questionnaire
     {
         public Question QuestionActive { get; set; } // Question qui est affichée sur le form
         public List<int> ListeQuestionsSorties { get; set; } // Liste qui contient les questions déjà sorties pour éviter les répétitions
-        public int note { get; set; } // Note de l'utilisateur
+        public int Note { get; set; } // Note de l'utilisateur
 
 
         public FormQuestionnaire()
@@ -23,7 +23,7 @@ namespace Questionnaire
             InitializeComponent();
 
             ListeQuestionsSorties = new List<int>();
-            note = 0;
+            Note = 0;
 
             RemplirQuestionActive();
 
@@ -40,7 +40,7 @@ namespace Questionnaire
             // Chercher un numeroQuestion qui n'a jamais été choisi         
             while (ListeQuestionsSorties.Contains(numeroQuestion))
             {
-                numeroQuestion = r.Next(RecupererNbQuestion() + 1);
+                numeroQuestion = r.Next(RecupererNbQuestion());
             }
             ListeQuestionsSorties.Add(numeroQuestion);
 
@@ -110,6 +110,7 @@ namespace Questionnaire
         // Méthode qui permet d'écrire la question et ses réponses
         public void remplirForm()
         {
+            lbl_numQuestion.Text = Convert.ToString(ListeQuestionsSorties.Count());
             lbl_question.Text = QuestionActive.Enonce_question;
             radioBtt_reponse1.Text = QuestionActive.Liste_reponses[0].Enonce_reponse;
             radioBtt_reponse2.Text = QuestionActive.Liste_reponses[1].Enonce_reponse;
@@ -148,22 +149,22 @@ namespace Questionnaire
             if (radioBtt_reponse1.Checked && QuestionActive.Liste_reponses[0].veracite == 1)
             {
                 MessageBox.Show("Vous avez trouvez la bonne réponse");
-                note = note + 1;
+                Note = Note + 1;
             }
             else if (radioBtt_reponse2.Checked && QuestionActive.Liste_reponses[1].veracite == 1)
             {
                 MessageBox.Show("Vous avez trouvez la bonne réponse");
-                note = note + 1;
+                Note = Note + 1;
             }
             else if (radioBtt_reponse3.Checked && QuestionActive.Liste_reponses[2].veracite == 1)
             {
                 MessageBox.Show("Vous avez trouvez la bonne réponse");
-                note = note + 1;
+                Note = Note + 1;
             }
             else if (radioBtt_reponse4.Checked && QuestionActive.Liste_reponses[3].veracite == 1)
             {
                 MessageBox.Show("Vous avez trouvez la bonne réponse");
-                note = note + 1;
+                Note = Note + 1;
             }
             else
             {
@@ -187,7 +188,7 @@ namespace Questionnaire
             // Compter le nombre de question déjà réalisé par le joueur, si le joueur a fait 20 questions, quitter le form
             if (ListeQuestionsSorties.Count() == 20)
             {
-                MessageBox.Show("Vous avez terminé le test ! Félicitations !\n Votre note est de : " + note + "/20");
+                MessageBox.Show("Vous avez terminé le test ! Félicitations !\n Votre note est de : " + Note + "/20");
                 Application.Exit();
             }
             else
@@ -196,6 +197,16 @@ namespace Questionnaire
                 RemplirQuestionActive();
                 remplirForm();
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_numQuestion_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
