@@ -52,10 +52,11 @@
     <Compile Include="FormDijkstra.Designer.cs">
       <DependentUpon>FormDijkstra.cs</DependentUpon>
     </Compile>
-    <Compile Include="GenericNode.cs" />
+    <Compile Include="Noeud.cs" />
+    <Compile Include="NoeudNumero.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SearchTree.cs" />
+    <Compile Include="ArbreRecherche.cs" />
     <EmbeddedResource Include="FormDijkstra.resx">
       <DependentUpon>FormDijkstra.cs</DependentUpon>
     </EmbeddedResource>
