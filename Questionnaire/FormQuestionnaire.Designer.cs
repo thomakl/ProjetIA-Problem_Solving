@@ -52,6 +52,7 @@
             // 
             this.radioBtt_reponse1.AutoEllipsis = true;
             this.radioBtt_reponse1.AutoSize = true;
+            this.radioBtt_reponse1.Checked = true;
             this.radioBtt_reponse1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioBtt_reponse1.Location = new System.Drawing.Point(62, 162);
             this.radioBtt_reponse1.Name = "radioBtt_reponse1";
@@ -64,42 +65,36 @@
             // 
             // radioBtt_reponse4
             // 
-            this.radioBtt_reponse4.AutoEllipsis = true;
             this.radioBtt_reponse4.AutoSize = true;
             this.radioBtt_reponse4.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioBtt_reponse4.Location = new System.Drawing.Point(62, 283);
             this.radioBtt_reponse4.Name = "radioBtt_reponse4";
             this.radioBtt_reponse4.Size = new System.Drawing.Size(76, 18);
             this.radioBtt_reponse4.TabIndex = 2;
-            this.radioBtt_reponse4.TabStop = true;
             this.radioBtt_reponse4.Text = "reponse4";
             this.radioBtt_reponse4.UseVisualStyleBackColor = true;
             this.radioBtt_reponse4.CheckedChanged += new System.EventHandler(this.radioBtt_reponse4_CheckedChanged);
             // 
             // radioBtt_reponse3
             // 
-            this.radioBtt_reponse3.AutoEllipsis = true;
             this.radioBtt_reponse3.AutoSize = true;
             this.radioBtt_reponse3.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioBtt_reponse3.Location = new System.Drawing.Point(62, 242);
             this.radioBtt_reponse3.Name = "radioBtt_reponse3";
             this.radioBtt_reponse3.Size = new System.Drawing.Size(76, 18);
             this.radioBtt_reponse3.TabIndex = 3;
-            this.radioBtt_reponse3.TabStop = true;
             this.radioBtt_reponse3.Text = "reponse3";
             this.radioBtt_reponse3.UseVisualStyleBackColor = true;
             this.radioBtt_reponse3.CheckedChanged += new System.EventHandler(this.radioBtt_reponse3_CheckedChanged);
             // 
             // radioBtt_reponse2
             // 
-            this.radioBtt_reponse2.AutoEllipsis = true;
             this.radioBtt_reponse2.AutoSize = true;
             this.radioBtt_reponse2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioBtt_reponse2.Location = new System.Drawing.Point(62, 202);
             this.radioBtt_reponse2.Name = "radioBtt_reponse2";
             this.radioBtt_reponse2.Size = new System.Drawing.Size(76, 18);
             this.radioBtt_reponse2.TabIndex = 4;
-            this.radioBtt_reponse2.TabStop = true;
             this.radioBtt_reponse2.Text = "reponse2";
             this.radioBtt_reponse2.UseVisualStyleBackColor = true;
             this.radioBtt_reponse2.CheckedChanged += new System.EventHandler(this.radioBtt_reponse2_CheckedChanged);

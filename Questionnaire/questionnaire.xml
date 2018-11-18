@@ -169,4 +169,20 @@
     <proposition>46</proposition>
     <reponse>Oui</reponse>
   </question>
+  <question>
+    <titreQuestion>En quoi le langage humain est-il pragmatique ?</titreQuestion>
+    <proposition>Il possède un ensemble fermé de mots autorisés</proposition>
+    <proposition>Il doit se plier à des règles pour obtenir des phrases correctes</proposition>
+    <proposition>La pertinance de ce qui est dit est relative au contexte et à l'enchainement des idées</proposition>
+    <proposition>Le sens des phrases est produit relativement aux connaissances universelles, aux lois universelles, à l'expérience commune et aux attendus sociaux-culturels</proposition>
+    <reponse>La pertinance de ce qui est dit est relative au contexte et à l'enchainement des idées</reponse>
+  </question>
+  <question>
+    <titreQuestion>Dans quel cas un problème de satisfaction des contraintes est-il dit "consistant" ? </titreQuestion>
+    <proposition>S'il existe une affectation de ses variables qui vérifient toutes les contraintes</proposition>
+    <proposition>S'il n'existe pas une affectation de ses variables qui vérifient toutes les contraintes</proposition>
+    <proposition>S'il existe des contraintes contradictoires</proposition>
+    <proposition>S'il existe une affectation de ses variables qui ne vérifie aucune contrainte</proposition>
+    <reponse>S'il existe une affectation de ses variables qui vérifient toutes les contraintes</reponse>
+  </question>
 </questionnaire>
