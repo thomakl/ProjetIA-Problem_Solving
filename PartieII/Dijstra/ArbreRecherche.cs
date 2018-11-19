@@ -200,14 +200,10 @@ namespace Dijstra {
                 noeudsOuverts.Add(new List<Noeud>(L_Ouverts));
                 noeudsFermes.Add(new List<Noeud>(L_Fermes));
             }
-
-            //pour avoir la dernière ligne
-            L_Ouverts.Remove(N);
-            L_Fermes.Add(N);
-            this.MAJSuccesseurs(N);
-            noeudsOuverts.Add(new List<Noeud>(L_Ouverts));
-            noeudsFermes.Add(new List<Noeud>(L_Fermes));
         }
+
+
+        
 
     }
 }

@@ -36,7 +36,6 @@
             this.lblO = new System.Windows.Forms.Label();
             this.btnOk = new System.Windows.Forms.Button();
             this.btnInit = new System.Windows.Forms.Button();
-            this.btnFin = new System.Windows.Forms.Button();
             this.lblEnonce = new System.Windows.Forms.Label();
             this.treeViewSaisie = new System.Windows.Forms.TreeView();
             this.lblArbre = new System.Windows.Forms.Label();
@@ -119,16 +118,6 @@
             this.btnInit.UseVisualStyleBackColor = true;
             this.btnInit.Click += new System.EventHandler(this.btnInit_Click);
             // 
-            // btnFin
-            // 
-            this.btnFin.Location = new System.Drawing.Point(204, 454);
-            this.btnFin.Name = "btnFin";
-            this.btnFin.Size = new System.Drawing.Size(99, 36);
-            this.btnFin.TabIndex = 8;
-            this.btnFin.Text = "J\'ai trouvé le plus court chemin !";
-            this.btnFin.UseVisualStyleBackColor = true;
-            this.btnFin.Click += new System.EventHandler(this.btnFin_Click);
-            // 
             // lblEnonce
             // 
             this.lblEnonce.AutoSize = true;
@@ -140,7 +129,7 @@
             // 
             // treeViewSaisie
             // 
-            this.treeViewSaisie.Location = new System.Drawing.Point(210, 532);
+            this.treeViewSaisie.Location = new System.Drawing.Point(200, 478);
             this.treeViewSaisie.Name = "treeViewSaisie";
             this.treeViewSaisie.Size = new System.Drawing.Size(121, 97);
             this.treeViewSaisie.TabIndex = 10;
@@ -149,7 +138,7 @@
             // lblArbre
             // 
             this.lblArbre.AutoSize = true;
-            this.lblArbre.Location = new System.Drawing.Point(76, 568);
+            this.lblArbre.Location = new System.Drawing.Point(66, 514);
             this.lblArbre.Name = "lblArbre";
             this.lblArbre.Size = new System.Drawing.Size(104, 13);
             this.lblArbre.TabIndex = 12;
@@ -200,7 +189,7 @@
             // 
             // btnOkArbre
             // 
-            this.btnOkArbre.Location = new System.Drawing.Point(377, 543);
+            this.btnOkArbre.Location = new System.Drawing.Point(367, 489);
             this.btnOkArbre.Name = "btnOkArbre";
             this.btnOkArbre.Size = new System.Drawing.Size(75, 23);
             this.btnOkArbre.TabIndex = 18;
@@ -210,7 +199,7 @@
             // 
             // btnInitArbre
             // 
-            this.btnInitArbre.Location = new System.Drawing.Point(377, 591);
+            this.btnInitArbre.Location = new System.Drawing.Point(367, 537);
             this.btnInitArbre.Name = "btnInitArbre";
             this.btnInitArbre.Size = new System.Drawing.Size(75, 23);
             this.btnInitArbre.TabIndex = 19;
@@ -222,7 +211,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(548, 651);
+            this.ClientSize = new System.Drawing.Size(548, 624);
             this.Controls.Add(this.btnInitArbre);
             this.Controls.Add(this.btnOkArbre);
             this.Controls.Add(this.lblArrive);
@@ -233,7 +222,6 @@
             this.Controls.Add(this.lblArbre);
             this.Controls.Add(this.treeViewSaisie);
             this.Controls.Add(this.lblEnonce);
-            this.Controls.Add(this.btnFin);
             this.Controls.Add(this.btnInit);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.lblO);
@@ -259,7 +247,6 @@
         private System.Windows.Forms.Label lblO;
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.Button btnInit;
-        private System.Windows.Forms.Button btnFin;
         private System.Windows.Forms.Label lblEnonce;
         private System.Windows.Forms.TreeView treeViewSaisie;
         private System.Windows.Forms.Label lblArbre;

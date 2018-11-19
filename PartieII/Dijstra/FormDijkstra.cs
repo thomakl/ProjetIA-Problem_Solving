@@ -51,6 +51,7 @@ namespace Dijstra {
             NoeudNumero N0 = new NoeudNumero(this);
             N0.numero = NoeudInitial;
             arbre.RechercheSolutionAEtoileListe(N0, NoeudsOuverts, NoeudsFermes);
+            arbre.GetSearchTree(treeViewSaisie);
 
 
             //Remplissage des textBox noeuds ouverts et fermés
@@ -140,12 +141,7 @@ namespace Dijstra {
 
 
         private void btnFin_Click(object sender, EventArgs e) {
-            lblArbre.Visible = true;
-            btnInitArbre.Visible = true;
-            btnOkArbre.Visible = true;
-            treeViewSaisie.Visible = true;
-            btnInit.Visible = false;
-            btnOk.Visible = false;
+            
         }
 
 
@@ -165,6 +161,15 @@ namespace Dijstra {
                 txtBoxFsaisie.Text = "";
                 txtBoxOsaisie.Text = "";
                 Etape++;
+                if (Etape == NoeudsOuverts.Count()) {
+                    MessageBox.Show("Tu as réussi !");
+                    lblArbre.Visible = true;
+                    btnInitArbre.Visible = true;
+                    btnOkArbre.Visible = true;
+                    treeViewSaisie.Visible = true;
+                    btnInit.Visible = false;
+                    btnOk.Visible = false;
+                }
             } else { //réponse incorrecte
                 MessageBox.Show("Réponse fausse !");
             }
