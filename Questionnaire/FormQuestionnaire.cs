@@ -116,6 +116,12 @@ namespace Questionnaire
             radioBtt_reponse2.Text = QuestionActive.Liste_reponses[1].Enonce_reponse;
             radioBtt_reponse3.Text = QuestionActive.Liste_reponses[2].Enonce_reponse;
             radioBtt_reponse4.Text = QuestionActive.Liste_reponses[3].Enonce_reponse;
+
+            // Decocher les reponse lors de l'initialisation de la question
+            radioBtt_reponse1.Checked = false;
+            radioBtt_reponse2.Checked = false;
+            radioBtt_reponse3.Checked = false;
+            radioBtt_reponse4.Checked = false;
         }
 
         private void lbl_question_Click(object sender, EventArgs e)
