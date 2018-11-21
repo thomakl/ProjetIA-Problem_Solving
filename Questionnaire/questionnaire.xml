@@ -185,4 +185,36 @@
     <proposition>S'il existe une affectation de ses variables qui ne vérifie aucune contrainte</proposition>
     <reponse>S'il existe une affectation de ses variables qui vérifient toutes les contraintes</reponse>
   </question>
+  <question>
+    <titreQuestion>En CSP (Resolution de problème par contrainte), qu'est ce qu'une contrainte faible ?</titreQuestion>
+    <proposition>Une contrainte faible est une contrainte qui peut être violé</proposition>
+    <proposition>Une contrainte qui n'induit peu d'erreur</proposition>
+    <proposition>Une contrainte qui n'apporte pas beaucoup de pertinence</proposition>
+     <proposition>Une contrainte qui n'apporte pas beaucoup de précision</proposition>
+    <reponse>Une contrainte faible est une contrainte qui peut être violé</reponse>
+  </question>
+  <question>
+    <titreQuestion>Qu'est ce qu'un degrée de liberté en robotitque ?</titreQuestion>
+    <proposition>La portée à laquelle le robot peut s'éloigner du contrôleur</proposition>
+      <proposition>le nombre d'axe de rotation que le robot a à sa disposition</proposition>
+    <proposition>Le nombre de language compris par le robot</proposition>
+    <proposition>Le nombre de loi soumis au robot</proposition>
+    <reponse>le nombre d'axe de rotation que le robot a à sa disposition</reponse>
+  </question>
+  <question>
+    <titreQuestion>Quel est le principe de fonctionement du capteur ultrason ?</titreQuestion>
+    <proposition>Emmission d'une radiofréquence rapide par un emmeteur</proposition>
+    <proposition>Emmission d'une son rapide par un emmeteur</proposition>
+    <proposition>Emmission d'une lumière rapide par un emmeteur</proposition>
+    <proposition>Emmission d'une signal rapide par un emmeteur</proposition>
+    <reponse>Emmission d'une son rapide par un emmeteur</reponse>
+  </question>
+  <question>
+    <titreQuestion>Quelles sont les désavantages du capteur ultrason ?</titreQuestion>
+    <proposition>La fréquence emise par le capteur utltrason est proche d'un contrôleur radio émis par le robot</proposition>
+    <proposition>La distance maximale n'est que d'une centaine de mètres</proposition>
+    <proposition>La forme des obstacles peut causer une déformation de la vision du robot de son environnement</proposition>
+    <proposition>Toutes les réponses sont correctes</proposition>
+    <reponse>La forme des obstacles peut causer une déformation de la vision du robot de son environnement</reponse>
+  </question>
 </questionnaire>
