@@ -46,6 +46,8 @@
             this.textBoxArrive = new System.Windows.Forms.TextBox();
             this.btnOkArbre = new System.Windows.Forms.Button();
             this.btnInitArbre = new System.Windows.Forms.Button();
+            this.txtBoxSaisieArb = new System.Windows.Forms.TextBox();
+            this.btnAjoutArb = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtBoxFrep
@@ -129,16 +131,17 @@
             // 
             // treeViewSaisie
             // 
-            this.treeViewSaisie.Location = new System.Drawing.Point(200, 478);
+            this.treeViewSaisie.Location = new System.Drawing.Point(313, 466);
             this.treeViewSaisie.Name = "treeViewSaisie";
             this.treeViewSaisie.Size = new System.Drawing.Size(121, 97);
             this.treeViewSaisie.TabIndex = 10;
             this.treeViewSaisie.Visible = false;
+            this.treeViewSaisie.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeViewSaisie_NodeMouseClick);
             // 
             // lblArbre
             // 
             this.lblArbre.AutoSize = true;
-            this.lblArbre.Location = new System.Drawing.Point(66, 514);
+            this.lblArbre.Location = new System.Drawing.Point(46, 489);
             this.lblArbre.Name = "lblArbre";
             this.lblArbre.Size = new System.Drawing.Size(104, 13);
             this.lblArbre.TabIndex = 12;
@@ -189,7 +192,7 @@
             // 
             // btnOkArbre
             // 
-            this.btnOkArbre.Location = new System.Drawing.Point(367, 489);
+            this.btnOkArbre.Location = new System.Drawing.Point(256, 589);
             this.btnOkArbre.Name = "btnOkArbre";
             this.btnOkArbre.Size = new System.Drawing.Size(75, 23);
             this.btnOkArbre.TabIndex = 18;
@@ -199,7 +202,7 @@
             // 
             // btnInitArbre
             // 
-            this.btnInitArbre.Location = new System.Drawing.Point(367, 537);
+            this.btnInitArbre.Location = new System.Drawing.Point(393, 589);
             this.btnInitArbre.Name = "btnInitArbre";
             this.btnInitArbre.Size = new System.Drawing.Size(75, 23);
             this.btnInitArbre.TabIndex = 19;
@@ -207,11 +210,32 @@
             this.btnInitArbre.UseVisualStyleBackColor = true;
             this.btnInitArbre.Visible = false;
             // 
+            // txtBoxSaisieArb
+            // 
+            this.txtBoxSaisieArb.Location = new System.Drawing.Point(49, 521);
+            this.txtBoxSaisieArb.Name = "txtBoxSaisieArb";
+            this.txtBoxSaisieArb.Size = new System.Drawing.Size(101, 20);
+            this.txtBoxSaisieArb.TabIndex = 20;
+            this.txtBoxSaisieArb.Visible = false;
+            // 
+            // btnAjoutArb
+            // 
+            this.btnAjoutArb.Location = new System.Drawing.Point(169, 519);
+            this.btnAjoutArb.Name = "btnAjoutArb";
+            this.btnAjoutArb.Size = new System.Drawing.Size(28, 23);
+            this.btnAjoutArb.TabIndex = 21;
+            this.btnAjoutArb.Text = "+";
+            this.btnAjoutArb.UseVisualStyleBackColor = true;
+            this.btnAjoutArb.Visible = false;
+            this.btnAjoutArb.Click += new System.EventHandler(this.btnAjoutArb_Click);
+            // 
             // FormDijkstra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(548, 624);
+            this.Controls.Add(this.btnAjoutArb);
+            this.Controls.Add(this.txtBoxSaisieArb);
             this.Controls.Add(this.btnInitArbre);
             this.Controls.Add(this.btnOkArbre);
             this.Controls.Add(this.lblArrive);
@@ -257,6 +281,8 @@
         private System.Windows.Forms.TextBox textBoxArrive;
         private System.Windows.Forms.Button btnOkArbre;
         private System.Windows.Forms.Button btnInitArbre;
+        private System.Windows.Forms.TextBox txtBoxSaisieArb;
+        private System.Windows.Forms.Button btnAjoutArb;
     }
 }
 

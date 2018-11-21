@@ -19,6 +19,7 @@ namespace Dijstra {
         public int Etape { get; private set; }                      //Progression dans l'algo de Dijkstra
         public List<List<Noeud>> NoeudsOuverts { get; set; }        //Liste avec toutes les étapes de la liste de noeud ouverts
         public List<List<Noeud>> NoeudsFermes { get; set; }         //idem pour les noeuds fermés
+        public int NoeudEnCours { get; set; }                       //pour le remplissage du TreeView, pour savoir où on est rendu
 
 
 
@@ -31,8 +32,8 @@ namespace Dijstra {
             
             // Choix des noeuds initial et d'arrivée
             Random r = new Random();
-            NoeudInitial = r.Next(NbNoeuds);
-            NoeudArrivee = r.Next(NbNoeuds);
+            NoeudInitial = 6;// r.Next(NbNoeuds);
+            NoeudArrivee = 5;// r.Next(NbNoeuds);
             if (NoeudInitial == NoeudArrivee) { // pour éviter les cas d'égalités
                 NoeudArrivee = (NoeudArrivee + 1) % NbNoeuds;
             }
@@ -167,6 +168,9 @@ namespace Dijstra {
                     btnInitArbre.Visible = true;
                     btnOkArbre.Visible = true;
                     treeViewSaisie.Visible = true;
+                    treeViewSaisie.ExpandAll();
+                    btnAjoutArb.Visible = true;
+                    txtBoxSaisieArb.Visible = true;
                     btnInit.Visible = false;
                     btnOk.Visible = false;
                 }
@@ -214,5 +218,15 @@ namespace Dijstra {
                 return true;
             }
         }
+
+        private void btnAjoutArb_Click(object sender, EventArgs e) {
+            
+        }
+
+        private void treeViewSaisie_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            e.Node.Text = txtBoxSaisieArb.Text;
+        }
+
     }
 }

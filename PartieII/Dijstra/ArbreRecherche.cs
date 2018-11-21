@@ -152,7 +152,7 @@ namespace Dijstra {
             // On suppose le TreeView préexistant
             TV.Nodes.Clear();
 
-            TreeNode TN = new TreeNode(L_Fermes[0].ToString());
+            TreeNode TN = new TreeNode("?");
             TV.Nodes.Add(TN);
 
             AjouteBranche(L_Fermes[0], TN);
@@ -162,7 +162,7 @@ namespace Dijstra {
         // AjouteBranche est exclusivement appelée par GetSearchTree; les noeuds sont ajoutés de manière récursive
         private void AjouteBranche(Noeud GN, TreeNode TN) {
             foreach (Noeud GNfils in GN.Enfants) {
-                TreeNode TNfils = new TreeNode(GNfils.ToString());
+                TreeNode TNfils = new TreeNode("?");
                 TN.Nodes.Add(TNfils);
                 if (GNfils.Enfants.Count > 0) AjouteBranche(GNfils, TNfils);
             }
