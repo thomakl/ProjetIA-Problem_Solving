@@ -10,8 +10,9 @@ namespace Questionnaire
     {
         public string Enonce_question { get; set; }
         public List<Reponse> Liste_reponses { get; set; }
+        public int NbPoint { get; }
 
-        public Question(string q, Reponse r1, Reponse r2, Reponse r3, Reponse rv)
+        public Question(string q, Reponse r1, Reponse r2, Reponse r3, Reponse rv, int NbPoint)
         {
             Enonce_question = q;
             Liste_reponses = new List<Reponse>();

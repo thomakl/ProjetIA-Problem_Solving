@@ -56,6 +56,9 @@ namespace Questionnaire
             //// Donne la réponse de la question
             XmlNode reponse = question.SelectSingleNode("reponse");
 
+            //// Donne le point attribué à la question
+            XmlNode point = question.SelectSingleNode("point");
+
             // Création de la question et des réponses
             Reponse r1;
             Reponse r2;
@@ -90,7 +93,10 @@ namespace Questionnaire
                 r4 = new Reponse(propositions[3].InnerText, 1);
             }
 
-            QuestionActive = new Question(titreQuestion.InnerText, r1, r2, r3, r4);
+            // Nombre de point attribué à la question
+            int NbPoint = Convert.ToInt32(point.InnerText);
+
+            QuestionActive = new Question(titreQuestion.InnerText, r1, r2, r3, r4, NbPoint);
         }
 
         // Permet de récupérer le fichier XML où sont contenues les questions et les réponses
@@ -155,22 +161,22 @@ namespace Questionnaire
             if (radioBtt_reponse1.Checked && QuestionActive.Liste_reponses[0].veracite == 1)
             {
                 MessageBox.Show("Vous avez trouvez la bonne réponse");
-                Note = Note + 1;
+                Note = Note + QuestionActive.NbPoint;
             }
             else if (radioBtt_reponse2.Checked && QuestionActive.Liste_reponses[1].veracite == 1)
             {
                 MessageBox.Show("Vous avez trouvez la bonne réponse");
-                Note = Note + 1;
+                Note = Note + QuestionActive.NbPoint;
             }
             else if (radioBtt_reponse3.Checked && QuestionActive.Liste_reponses[2].veracite == 1)
             {
                 MessageBox.Show("Vous avez trouvez la bonne réponse");
-                Note = Note + 1;
+                Note = Note + QuestionActive.NbPoint;
             }
             else if (radioBtt_reponse4.Checked && QuestionActive.Liste_reponses[3].veracite == 1)
             {
                 MessageBox.Show("Vous avez trouvez la bonne réponse");
-                Note = Note + 1;
+                Note = Note + QuestionActive.NbPoint;
             }
             else
             {

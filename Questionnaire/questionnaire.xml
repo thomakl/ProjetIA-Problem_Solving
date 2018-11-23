@@ -2,6 +2,7 @@
 
 <questionnaire>
   <question>
+    <point>1</point>
     <titreQuestion>Laquelle de ces entreprises a mis au point la première voiture autonome ?</titreQuestion>
     <proposition>Tesla</proposition>
     <proposition>Google</proposition>
@@ -10,6 +11,7 @@
     <reponse>La voiture pleinement autonome n'existe pas</reponse>
   </question>
   <question>
+    <point>1</point>
     <titreQuestion>Qu'est-ce que l'intelligence artificielle ?</titreQuestion>
     <proposition>Mettre son intelligence dans un ordinateur</proposition>
     <proposition>Programmer avec sa propre intelligence</proposition>
@@ -18,6 +20,7 @@
     <reponse>Créer une machine intelligente</reponse>
   </question>
   <question>
+    <point>1</point>
     <titreQuestion>Quel est le nom des programmes qui simulent le processus de penser des êtres humains ?</titreQuestion>
     <proposition>La logique humaine</proposition>
     <proposition>La raison expert</proposition>
@@ -26,6 +29,7 @@
     <reponse>Le système expert</reponse>
   </question>
   <question>
+    <point>1</point>
     <titreQuestion>Qu'est-ce qu'une matrice adjacente ?</titreQuestion>
     <proposition>La représentation simple d'un graphe</proposition>
     <proposition>La matrice complémentaire d'une matrice d'entraînement</proposition>
@@ -34,6 +38,7 @@
     <reponse>La représentation simple d'un graphe</reponse>
   </question>
   <question>
+    <point>1</point>
     <titreQuestion>Dans quel contexte utilise-t-on un algorithme MinmAx ?</titreQuestion>
     <proposition>Lors de l'attribution des tâches dans un planning </proposition>
     <proposition>Lors de la reconnaissance d'image</proposition>
@@ -42,6 +47,7 @@
     <reponse>Dans la théorie des jeux</reponse>
   </question>
   <question>
+    <point>1</point>
     <titreQuestion>Donner un exemple de capteur permettant d'obtenir des informations propioceptives : </titreQuestion>
     <proposition>LIDAR</proposition>
     <proposition>Odomètre</proposition>
@@ -50,6 +56,7 @@
     <reponse>Odomètre</reponse>
   </question>
   <question>
+    <point>1</point>
     <titreQuestion>Donner un exemple de capteur permettant d'obtenir des informations extéroceptive : </titreQuestion>
     <proposition>Niveau de charge de batterie</proposition>
     <proposition>Odomètre</proposition>
@@ -58,6 +65,7 @@
     <reponse>Capteur de pression</reponse>
   </question>
   <question>
+    <point>1</point>
     <titreQuestion>Qu'est-ce qu'un amer ? </titreQuestion>
     <proposition>Un guide dans l'environnement du robot</proposition>
     <proposition>Un obstacle que le robot doit éviter</proposition>
@@ -66,6 +74,7 @@
     <reponse>Un guide dans l'environnement du robot</reponse>
   </question>
   <question>
+    <point>1</point>
     <titreQuestion>D'où vient le terme "robot" ?</titreQuestion>
     <proposition>"Robotae" qui vient du latin et qui signifie "esclave"</proposition>
     <proposition>"Robota" qui vient du tchèque et qui signifie "travail"</proposition>
@@ -74,6 +83,7 @@
     <reponse>"Robota" qui vient du tchèque et qui signifie "travail"</reponse>
   </question>
   <question>
+    <point>1</point>
     <titreQuestion>Parmis les tâches suivantes, laquelle ne peut pas être effectuée par une IA ?</titreQuestion>
     <proposition>Perception visuelle</proposition>
     <proposition>Reconnaissance de voix</proposition>
@@ -82,6 +92,7 @@
     <reponse>Auncune des réponses</reponse>
   </question>
   <question>
+    <point>1</point>
     <titreQuestion>Laquelle de ces propositions à la possibilité de substituer les humains dans une tâche physique seulement ? </titreQuestion>
     <proposition>Deep Learning</proposition>
     <proposition>Robotique</proposition>
@@ -90,6 +101,7 @@
     <reponse>Robotique</reponse>
   </question>
   <question>
+    <point>1</point>
     <titreQuestion>Que comprend un servo-moteur ? </titreQuestion>
     <proposition>Un moteur électrique</proposition>
     <proposition>Un capteur</proposition>
@@ -98,6 +110,7 @@
     <reponse>Toutes les réponses</reponse>
   </question>
   <question>
+    <point>1</point>
     <titreQuestion>Parmis les capteurs suivants, lequel permet de calculer la distance entre un robot et les objets environnants ? </titreQuestion>
     <proposition>LIDAR</proposition>
     <proposition>GPS</proposition>
@@ -106,6 +119,7 @@
     <reponse>LIDAR</reponse>
   </question>
   <question>
+    <point>1</point>
     <titreQuestion>Quelle est a définition d'une IA Forte ? </titreQuestion>
     <proposition>Un ensemble de programme informatique qui produisent des résultats qui seraient considérés comme reflétant l'intelligence s'il étaient généréspar des humains</proposition>
     <proposition>Un programme avec autant de conscience et de personnalité que des humains</proposition>
@@ -114,6 +128,7 @@
     <reponse>Un programme avec autant de conscience et de personnalité que des humains</reponse>
   </question>
   <question>
+    <point>1</point>
     <titreQuestion>Quelle est a définition d'une IA Faible ? </titreQuestion>
     <proposition>Un programme avec un taux de prédiction faible</proposition>
     <proposition>L'incarnation des capacités intellectuelles humaines dans un ordinateur</proposition>
@@ -122,6 +137,7 @@
     <reponse>Un programme partiellement intelligent mais ne pouvant pas obtenir la conscience humaine</reponse>
   </question>
   <question>
+    <point>1</point>
     <titreQuestion>Qu'est-ce qu'une IA Data Based ? </titreQuestion>
     <proposition>Un programme de perception (reconnaissance visuelle, etc)</proposition>
     <proposition>Un arbre de décisions</proposition>
@@ -130,6 +146,7 @@
     <reponse>Un programme basé sur l'apprentissage automatique</reponse>
   </question>
   <question>
+    <point>1</point>
     <titreQuestion>Laquelle de ces propositions est correcte concernant la vision par ordinateur ? </titreQuestion>
     <proposition>Les robots peuvent transmettre des images en temps réel vers un serveur distant pour les analyser</proposition>
     <proposition>Des ordinateurs comprennent les images numériques et peuvent convertir les données d'un monde réel vers une version numérique et symbolique d'information</proposition>
@@ -138,6 +155,7 @@
     <reponse>Des ordinateurs comprennent les images numériques et peuvent convertir les données d'un monde réel vers une version numérique et symbolique d'information</reponse>
   </question>
   <question>
+    <point>1</point>
     <titreQuestion>Parmis les domaines suivants, lesquels ont permis un pic de l'intelligence artificielle ? </titreQuestion>
     <proposition>La plannification</proposition>
     <proposition>Les jeux vidéos</proposition>
@@ -146,6 +164,7 @@
     <reponse>Toutes les réponses</reponse>
   </question>
   <question>
+    <point>1</point>
     <titreQuestion>Quel est le terme utilisé pour décrire la part de jugement ou de bon sens dans la résolution de problèmes ? </titreQuestion>
     <proposition>Heuristique</proposition>
     <proposition>Critique</proposition>
@@ -154,6 +173,7 @@
     <reponse>Heuristique</reponse>
   </question>
   <question>
+    <point>1</point>
     <titreQuestion>Parmis les propositions suivantes, quelle est la tâche mieux réalisépar les hommes que par les ordinateurs ? </titreQuestion>
     <proposition>Reconnaître l'importance relative</proposition>
     <proposition>Trouver des similitudes</proposition>
@@ -162,6 +182,7 @@
     <reponse>Toutes les réponses</reponse>
   </question>
   <question>
+    <point>1</point>
     <titreQuestion>Le but de l'IA est-il de construire des systèmes qui présentent un comportement intelligent ? </titreQuestion>
     <proposition>Oui</proposition>
     <proposition>Non</proposition>
@@ -170,6 +191,7 @@
     <reponse>Oui</reponse>
   </question>
   <question>
+    <point>1</point>
     <titreQuestion>En quoi le langage humain est-il pragmatique ?</titreQuestion>
     <proposition>Il possède un ensemble fermé de mots autorisés</proposition>
     <proposition>Il doit se plier à des règles pour obtenir des phrases correctes</proposition>
@@ -178,6 +200,7 @@
     <reponse>La pertinance de ce qui est dit est relative au contexte et à l'enchainement des idées</reponse>
   </question>
   <question>
+    <point>1</point>
     <titreQuestion>Dans quel cas un problème de satisfaction des contraintes est-il dit "consistant" ? </titreQuestion>
     <proposition>S'il existe une affectation de ses variables qui vérifient toutes les contraintes</proposition>
     <proposition>S'il n'existe pas une affectation de ses variables qui vérifient toutes les contraintes</proposition>
@@ -186,6 +209,7 @@
     <reponse>S'il existe une affectation de ses variables qui vérifient toutes les contraintes</reponse>
   </question>
   <question>
+    <point>1</point>
     <titreQuestion>En CSP (Resolution de problème par contrainte), qu'est ce qu'une contrainte faible ?</titreQuestion>
     <proposition>Une contrainte faible est une contrainte qui peut être violé</proposition>
     <proposition>Une contrainte qui n'induit peu d'erreur</proposition>
@@ -194,6 +218,7 @@
     <reponse>Une contrainte faible est une contrainte qui peut être violé</reponse>
   </question>
   <question>
+    <point>1</point>
     <titreQuestion>Qu'est ce qu'un degrée de liberté en robotitque ?</titreQuestion>
     <proposition>La portée à laquelle le robot peut s'éloigner du contrôleur</proposition>
       <proposition>le nombre d'axe de rotation que le robot a à sa disposition</proposition>
@@ -202,6 +227,7 @@
     <reponse>le nombre d'axe de rotation que le robot a à sa disposition</reponse>
   </question>
   <question>
+    <point>1</point>
     <titreQuestion>Quel est le principe de fonctionement du capteur ultrason ?</titreQuestion>
     <proposition>Emmission d'une radiofréquence rapide par un emmeteur</proposition>
     <proposition>Emmission d'une son rapide par un emmeteur</proposition>
@@ -210,11 +236,68 @@
     <reponse>Emmission d'une son rapide par un emmeteur</reponse>
   </question>
   <question>
+    <point>1</point>
     <titreQuestion>Quelles sont les désavantages du capteur ultrason ?</titreQuestion>
     <proposition>La fréquence emise par le capteur utltrason est proche d'un contrôleur radio émis par le robot</proposition>
     <proposition>La distance maximale n'est que d'une centaine de mètres</proposition>
     <proposition>La forme des obstacles peut causer une déformation de la vision du robot de son environnement</proposition>
     <proposition>Toutes les réponses sont correctes</proposition>
     <reponse>La forme des obstacles peut causer une déformation de la vision du robot de son environnement</reponse>
+  </question>
+  <question>
+    <point>1</point>
+    <titreQuestion>
+        <![CDATA[On considère le code ci-dessous. Remplacer X1 et X2 pour que le pseudo-code de la fonction Alpha-Beta soit correcte.
+        
+		function alphabeta(node, depth, α, β, maximizingPlayer) is
+    if depth = 0 or node is a terminal node then
+        return the heuristic value of node
+    if maximizingPlayer then
+        value := −∞
+        for each child of node do
+            value := max(value, alphabeta(child, depth − 1, α, β, FALSE))
+            α := max(α, value)
+            X1
+        return value
+    else
+        value := +∞
+        for each child of node do
+            value := min(value, alphabeta(child, depth − 1, α, β, TRUE))
+            β := min(β, value)
+             X2
+        return value
+		end]]></titreQuestion>
+    <proposition>X1 : if α ≤ β then break et X2: if α ≥ β then break</proposition>
+    <proposition>X1 : if α ≤ β then break et X2: if α ≤ β then break</proposition>
+    <proposition>X1 : if α ≥ β then break et X2: if α ≥ β then break</proposition>
+    <proposition>X1 : if α ≥ β then break et X2: if α ≤ β then break</proposition>
+    <reponse>X1 : if α ≥ β then break et X2: if α ≥ β then break</reponse>
+  </question>
+  <question>
+    <point>1</point>
+    <titreQuestion>A quelle résolution de problème l'algorithme MinMax est-il utile ?</titreQuestion>
+    <proposition>aux mots-croisés</proposition>
+    <proposition>trouver le plus court chemin</proposition>
+    <proposition>au puissance 4</proposition>
+    <proposition>au jeu du taquin</proposition>
+    <reponse>au puissance 4</reponse>
+  </question>
+  <question>
+    <point>1</point>
+    <titreQuestion>Quel est l'avantage de l'utilisation de la méthode "Alpha-Beta" dans un alogrithme MinMax ?</titreQuestion>
+    <proposition>Il nous donne le plus court chemin dès la première passe</proposition>
+    <proposition>Il réduit le nombre de noeud à vérifier</proposition>
+    <proposition>Il implémente la méthode "First-In First-Out"</proposition>
+    <proposition>Il croise les individus Alpha-Beta</proposition>
+    <reponse>Il réduit le nombre de noeud à vérifier</reponse>
+  </question>
+  <question>
+    <point>1</point>
+    <titreQuestion>Quelles sont les étapes majeures de l'algorithme génétique ?</titreQuestion>
+    <proposition>Mutation - Croisement - Selection</proposition>
+    <proposition>Selection - Reproduction - Mutation</proposition>
+    <proposition>Hybridiation - Recombination - Croisement </proposition>
+    <proposition>Mutation - Réparation - Selection</proposition>
+    <reponse>Mutation - Croisement - Selection</reponse>
   </question>
 </questionnaire>
