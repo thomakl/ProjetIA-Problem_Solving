@@ -59,6 +59,11 @@ namespace Questionnaire
             //// Donne le point attribué à la question
             XmlNode point = question.SelectSingleNode("point");
 
+            //// Donne le chemin vers l'image si existant
+
+            XmlNode cheminImageXML = question.SelectSingleNode("cheminImage");
+      
+
             // Création de la question et des réponses
             Reponse r1;
             Reponse r2;
@@ -96,7 +101,18 @@ namespace Questionnaire
             // Nombre de point attribué à la question
             int NbPoint = Convert.ToInt32(point.InnerText);
 
-            QuestionActive = new Question(titreQuestion.InnerText, r1, r2, r3, r4, NbPoint);
+            string CheminImage = "";
+
+            try
+            {
+                // chemin de l'image 
+                CheminImage = cheminImageXML.InnerText;
+            }
+            catch (Exception e)
+            { }
+            
+
+            QuestionActive = new Question(titreQuestion.InnerText, r1, r2, r3, r4, NbPoint, CheminImage);
         }
 
         // Permet de récupérer le fichier XML où sont contenues les questions et les réponses
@@ -118,6 +134,19 @@ namespace Questionnaire
         {
             lbl_numQuestion.Text = Convert.ToString(ListeQuestionsSorties.Count());
             lbl_question.Text = QuestionActive.Enonce_question;
+
+            // AJout de l'image selon le cas
+            if (QuestionActive.CheminImage != "")
+            {
+                imgBox.Image = Image.FromFile(QuestionActive.CheminImage);
+                imgBox.SizeMode = PictureBoxSizeMode.Zoom;
+                imgBox.Show();
+            }
+            else
+            {
+                imgBox.Hide();
+            }
+
             radioBtt_reponse1.Text = QuestionActive.Liste_reponses[0].Enonce_reponse;
             radioBtt_reponse2.Text = QuestionActive.Liste_reponses[1].Enonce_reponse;
             radioBtt_reponse3.Text = QuestionActive.Liste_reponses[2].Enonce_reponse;
@@ -128,6 +157,8 @@ namespace Questionnaire
             radioBtt_reponse2.Checked = false;
             radioBtt_reponse3.Checked = false;
             radioBtt_reponse4.Checked = false;
+
+           
         }
 
         private void lbl_question_Click(object sender, EventArgs e)
@@ -217,6 +248,11 @@ namespace Questionnaire
         }
 
         private void lbl_numQuestion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void imgBox_Click(object sender, EventArgs e)
         {
 
         }

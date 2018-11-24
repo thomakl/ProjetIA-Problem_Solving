@@ -10,9 +10,10 @@ namespace Questionnaire
     {
         public string Enonce_question { get; set; }
         public List<Reponse> Liste_reponses { get; set; }
-        public int NbPoint { get; }
+        public int NbPoint { get; set; }
+        public string CheminImage { get; set; }
 
-        public Question(string q, Reponse r1, Reponse r2, Reponse r3, Reponse rv, int NbPoint)
+        public Question(string q, Reponse r1, Reponse r2, Reponse r3, Reponse rv, int NbPoint, string CheminImage)
         {
             Enonce_question = q;
             Liste_reponses = new List<Reponse>();
@@ -20,6 +21,8 @@ namespace Questionnaire
             Liste_reponses.Add(r2);
             Liste_reponses.Add(r3);
             Liste_reponses.Add(rv);
+            this.NbPoint = NbPoint;
+            this.CheminImage = CheminImage;
         }
     }
 }
