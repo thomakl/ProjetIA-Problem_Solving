@@ -14,31 +14,36 @@ namespace Questionnaire
 {
     public partial class FormQuestionnaire : Form
     {
-        public Question QuestionActive { get; set; } // Question qui est affichée sur le form
-        public List<int> ListeQuestionsSorties { get; set; } // Liste qui contient les questions déjà sorties pour éviter les répétitions
-        public int Note { get; set; } // Note de l'utilisateur
+        public Question QuestionActive { get; set; }                // Question qui est affichée sur le form
+        public List<int> ListeQuestionsSorties { get; set; }        // Liste qui contient les questions déjà sorties pour éviter les répétitions
+        public int Note { get; set; }                               // Note (sur 20) de l'utilisateur
 
 
         public FormQuestionnaire()
         {
             InitializeComponent();
 
+            // Créer la liste qui contiendria les numéros des questions déjà sorties
             ListeQuestionsSorties = new List<int>();
+
+            // Initialiser la note de l'utilisateur à 0
             Note = 0;
 
+            // Donner une question à QuestionActive
             RemplirQuestionActive();
 
+            // Replir le formulaire
             remplirForm();
 
         }
 
         public void RemplirQuestionActive()
         {
-            // Création d'un bombre aléatoire qui permettra de choisir une question
+            // Création d'un nombre aléatoire qui permettra de choisir une question
             Random r = new Random();
             int numeroQuestion = r.Next(RecupererNbQuestion());
 
-            // Chercher un numeroQuestion qui n'a jamais été choisi         
+            // Chercher un numeroQuestion qui n'a jamais été choisi pour éviter les répétitions        
             while (ListeQuestionsSorties.Contains(numeroQuestion))
             {
                 numeroQuestion = r.Next(RecupererNbQuestion());
@@ -48,22 +53,20 @@ namespace Questionnaire
             // Obtenir la question correspondant à numeroQuestion
             XmlNode question = RecupererFichier().GetElementsByTagName("question")[numeroQuestion];
 
-            // Donne le titre de la question
+            // Donner le titre de la question
             XmlNode titreQuestion = question.SelectSingleNode("titreQuestion");
 
-            //Donne les propositions de la question
+            //Donner les propositions de la question
             XmlNodeList propositions = question.SelectNodes("proposition");
 
-            //// Donne la réponse de la question
+            // Donner la réponse de la question
             XmlNode reponse = question.SelectSingleNode("reponse");
 
-            //// Donne le point attribué à la question
+            // Donner le point attribué à la question
             XmlNode point = question.SelectSingleNode("point");
 
-            //// Donne le chemin vers l'image si existant
-
-            XmlNode cheminImageXML = question.SelectSingleNode("cheminImage");
-      
+            // Donne le chemin vers l'image si existant
+            XmlNode cheminImageXML = question.SelectSingleNode("cheminImage");     
 
             // Création de la question et des réponses
             Reponse r1;
@@ -102,8 +105,8 @@ namespace Questionnaire
             // Nombre de point attribué à la question
             int NbPoint = Convert.ToInt32(point.InnerText);
 
+            // Récupérer le chemin de l'image si il existe
             string CheminImage = "";
-
             try
             {
                 // chemin de l'image 
@@ -112,11 +115,11 @@ namespace Questionnaire
             catch (Exception e)
             { }
             
-
+            // Implémentation de QuestionActive avec les paramètres obtenus
             QuestionActive = new Question(titreQuestion.InnerText, r1, r2, r3, r4, NbPoint, CheminImage);
         }
 
-        // Permet de récupérer le fichier XML où sont contenues les questions et les réponses
+        // Récupérer le fichier XML où sont contenues les questions et les réponses
         public XmlDocument RecupererFichier()
         {
             XmlDocument questionnaire = new XmlDocument();
@@ -124,19 +127,19 @@ namespace Questionnaire
             return questionnaire;
         }
 
-        // Recuperer le nombre de questions contenues dans le fichier XML
+        // Récuperer le nombre de questions contenues dans le fichier XML
         public int RecupererNbQuestion()
         {
             int nbQuestion = RecupererFichier().GetElementsByTagName("question").Count;
             return nbQuestion;
         }
-        // Méthode qui permet d'écrire la question et ses réponses
+        // Remplir le formulaire en écrivant une question et ses réponses
         public void remplirForm()
         {
             lbl_numQuestion.Text = Convert.ToString(ListeQuestionsSorties.Count());
             lbl_question.Text = QuestionActive.Enonce_question;
 
-            // AJout de l'image selon le cas
+            // Ajout de l'image selon le cas
             if (QuestionActive.CheminImage != "")
             {
                 imgBox.Image = Image.FromFile(QuestionActive.CheminImage);
@@ -153,7 +156,7 @@ namespace Questionnaire
             radioBtt_reponse3.Text = QuestionActive.Liste_reponses[2].Enonce_reponse;
             radioBtt_reponse4.Text = QuestionActive.Liste_reponses[3].Enonce_reponse;
 
-            // Decocher les reponse lors de l'initialisation de la question
+            // Décocher les reponse lors de l'initialisation de la question
             radioBtt_reponse1.Checked = false;
             radioBtt_reponse2.Checked = false;
             radioBtt_reponse3.Checked = false;
@@ -189,7 +192,7 @@ namespace Questionnaire
 
         private void btt_validation_Click(object sender, EventArgs e)
         {
-            // Correction => Voir si l'utilisateur à cocher la bonne réponse, et le corriger s'il a eu faux
+            // Vérifier la validité de la réponse de l'utilisateur et le corriger s'il a eu faux
             if (radioBtt_reponse1.Checked && QuestionActive.Liste_reponses[0].veracite == 1)
             {
                 MessageBox.Show("Vous avez trouvez la bonne réponse");
@@ -212,6 +215,7 @@ namespace Questionnaire
             }
             else
             {
+                // Récupérer la bonne réponse
                 int numReponseJuste = 0;
                 for (int i = 0; i < QuestionActive.Liste_reponses.Count(); ++i)
                 {
@@ -229,12 +233,12 @@ namespace Questionnaire
                 MessageBox.Show("Vous avez échouez... La bonne réponse était la réponse " + numReponseJuste + " :\n" + QuestionActive.Liste_reponses[numReponseJuste - 1].Enonce_reponse);
             }
 
-            // Compter le nombre de question déjà réalisé par le joueur, si le joueur a fait 20 questions, quitter le form
+            // Compter le nombre de question déjà réalisées par l'utilisatuer
+            // si l'utilisateur a répondu à 20 questions, quitter le form, sinon passer à la question suivante
             if (ListeQuestionsSorties.Count() == 20)
             {
                 FormDijkstra formDijkstra = new FormDijkstra(Note);
                 formDijkstra.Show();
-                //Application.Exit();
             }
             else
             {
