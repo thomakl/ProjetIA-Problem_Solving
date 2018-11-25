@@ -87,6 +87,12 @@
     </Content>
     <Content Include="questionnaire.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PartieII\Dijstra\Dijstra.csproj">
+      <Project>{460133f3-a6d0-4adb-bcfa-34436af1ec57}</Project>
+      <Name>Dijstra</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

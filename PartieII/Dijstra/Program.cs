@@ -16,7 +16,7 @@ namespace Dijstra
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormDijkstra());
+            //Application.Run(new FormDijkstra());
         }
     }
 }

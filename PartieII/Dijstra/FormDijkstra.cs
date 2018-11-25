@@ -20,20 +20,25 @@ namespace Dijstra {
         public List<List<Noeud>> NoeudsOuverts { get; set; }        //Liste avec toutes les étapes de la liste de noeud ouverts
         public List<List<Noeud>> NoeudsFermes { get; set; }         //idem pour les noeuds fermés
         public int NoeudEnCours { get; set; }                       //pour le remplissage du TreeView, pour savoir où on est rendu
+        public TreeNode ArbreCorrige { get; set; }                  //TreeNode de l'arbre juste
+        public int Note { get; set; }                               //note du candidat
 
 
 
         //CONSTRUCTEUR
-        public FormDijkstra() {
+        public FormDijkstra(int note) {
             InitializeComponent();
-            
+
+            //Définition de la note du candidat
+            Note = note;
+
             //Lecture de la question
             LectureFichier();
-            
+
             // Choix des noeuds initial et d'arrivée
             Random r = new Random();
-            NoeudInitial = 6;// r.Next(NbNoeuds);
-            NoeudArrivee = 5;// r.Next(NbNoeuds);
+            NoeudInitial = r.Next(NbNoeuds);
+            NoeudArrivee = r.Next(NbNoeuds);
             if (NoeudInitial == NoeudArrivee) { // pour éviter les cas d'égalités
                 NoeudArrivee = (NoeudArrivee + 1) % NbNoeuds;
             }
@@ -52,7 +57,8 @@ namespace Dijstra {
             NoeudNumero N0 = new NoeudNumero(this);
             N0.numero = NoeudInitial;
             arbre.RechercheSolutionAEtoileListe(N0, NoeudsOuverts, NoeudsFermes);
-            arbre.GetSearchTree(treeViewSaisie);
+            ArbreCorrige = arbre.GetSearchTree();
+            arbre.GetSearchTreeVide(treeViewSaisie);
 
 
             //Remplissage des textBox noeuds ouverts et fermés
@@ -64,7 +70,7 @@ namespace Dijstra {
 
         //METHODES
         private void LectureFichier() {
-            StreamReader monStreamReader = new StreamReader("graphe1.txt"); //à changer plus tard
+            StreamReader monStreamReader = new StreamReader("..\\..\\..\\PartieII\\Dijstra\\bin\\Debug\\graphe1.txt"); //à changer plus tard
 
             // 1ère ligne : nombre de noeuds du graphe
             string ligne = monStreamReader.ReadLine();
@@ -142,7 +148,7 @@ namespace Dijstra {
 
 
         private void btnFin_Click(object sender, EventArgs e) {
-            
+
         }
 
 
@@ -155,8 +161,9 @@ namespace Dijstra {
 
 
         private void btnOk_Click(object sender, EventArgs e) {
+            bool premierEssai = true;
 
-            if(Etape<NoeudsOuverts.Count() && EstEgal(NoeudsOuverts[Etape], txtBoxOsaisie.Text) && EstEgal(NoeudsFermes[Etape], txtBoxFsaisie.Text)) { //réponse correcte
+            if (Etape < NoeudsOuverts.Count() && EstEgal(NoeudsOuverts[Etape], txtBoxOsaisie.Text) && EstEgal(NoeudsFermes[Etape], txtBoxFsaisie.Text)) { //réponse correcte
                 txtBoxFrep.Text += "{" + txtBoxFsaisie.Text + "}\r\n";
                 txtBoxOrep.Text += "{" + txtBoxOsaisie.Text + "}\r\n";
                 txtBoxFsaisie.Text = "";
@@ -173,18 +180,25 @@ namespace Dijstra {
                     txtBoxSaisieArb.Visible = true;
                     btnInit.Visible = false;
                     btnOk.Visible = false;
+
+                    if (premierEssai) {
+                        Note = Note + 2;
+                    } else {
+                        Note++;
+                    }
                 }
             } else { //réponse incorrecte
                 MessageBox.Show("Réponse fausse !");
+                premierEssai = false;
             }
-            
+
         }
 
 
         private bool EstEgal(List<Noeud> listeNoeuds, string strNoeuds) {
-            for (int i=0; i<strNoeuds.Length; i++) {
+            for (int i = 0; i < strNoeuds.Length; i++) {
                 string strNum = "";
-                while (i<strNoeuds.Length && strNoeuds[i] != ',') {
+                while (i < strNoeuds.Length && strNoeuds[i] != ',') {
                     strNum += strNoeuds[i];
                     i++;
                 }
@@ -196,8 +210,8 @@ namespace Dijstra {
 
                 //pour savoir si le noeud présent dans le string est aussi présent dans la liste
                 int k = 0;
-                bool trouve = false; 
-                while (k<listeNoeuds.Count() && trouve == false) { 
+                bool trouve = false;
+                while (k < listeNoeuds.Count() && trouve == false) {
                     int noeudNumero = ((NoeudNumero)listeNoeuds[k]).numero;
                     if (noeudNumero == num) {
                         trouve = true;
@@ -206,7 +220,7 @@ namespace Dijstra {
                     k++;
                 }
 
-                if(trouve == false) { //car ça veut dire qu'on a pas trouvé un noeud du string dans la liste réelle
+                if (trouve == false) { //car ça veut dire qu'on a pas trouvé un noeud du string dans la liste réelle
                     return false;
                 }
             }
@@ -219,14 +233,68 @@ namespace Dijstra {
             }
         }
 
+
         private void btnAjoutArb_Click(object sender, EventArgs e) {
-            
+
         }
 
-        private void treeViewSaisie_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
-        {
+        private void treeViewSaisie_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e) {
             e.Node.Text = txtBoxSaisieArb.Text;
         }
 
+        private void btnOkArbre_Click(object sender, EventArgs e) {
+            //TreeNode test = treeViewSaisie.Nodes[0];
+            if (CompareTreeNodes(ArbreCorrige,treeViewSaisie.Nodes[0])) {
+                MessageBox.Show("Tu as réussi !");
+                Note++;
+            } else {
+                MessageBox.Show("Réponse fausse !");
+            }
+            FermerApp();
+        }
+
+
+        private bool CompareRecursiveTree(TreeNode tn1, TreeNode tn2) {
+            if (tn1 == null || tn2 == null) {
+                return tn1 == tn2;
+            }
+
+            if ((tn1.Text != tn2.Text) || (tn1.Nodes.Count != tn2.Nodes.Count)) {
+                return false;
+            }
+
+            for (int i = 0; i < tn1.Nodes.Count; i++) {
+                if (!CompareRecursiveTree(tn1.Nodes[i], tn2.Nodes[i])) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        private bool CompareTreeNodes(TreeNode tn1, TreeNode tn2) {
+            TreeNode tn1_Children1 = tn1;//.Nodes[0];
+            TreeNode tn2_Children2 = tn2;//.Nodes[0];
+
+            if (tn1_Children1 == null || tn2_Children2 == null) {
+                return tn1_Children1 == tn2_Children2;
+            }
+
+            if (tn1_Children1.Nodes.Count != tn2_Children2.Nodes.Count) {
+                return false;
+            }
+
+            for (int i = 0; i < tn1_Children1.Nodes.Count; i++) {
+                if (!CompareRecursiveTree(tn1_Children1, tn2_Children2)) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+
+        public void FermerApp() {
+            MessageBox.Show("Félicitations, tu as terminé le test !\n Tu as : " + Note + "/20");
+            Application.Exit();
+        }
     }
 }

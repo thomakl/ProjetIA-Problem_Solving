@@ -199,6 +199,7 @@
             this.btnOkArbre.Text = "Valider";
             this.btnOkArbre.UseVisualStyleBackColor = true;
             this.btnOkArbre.Visible = false;
+            this.btnOkArbre.Click += new System.EventHandler(this.btnOkArbre_Click);
             // 
             // btnInitArbre
             // 

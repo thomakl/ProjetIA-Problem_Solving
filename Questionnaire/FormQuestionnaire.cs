@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using Dijstra;
 
 namespace Questionnaire
 {
@@ -231,8 +232,9 @@ namespace Questionnaire
             // Compter le nombre de question déjà réalisé par le joueur, si le joueur a fait 20 questions, quitter le form
             if (ListeQuestionsSorties.Count() == 20)
             {
-                MessageBox.Show("Vous avez terminé le test ! Félicitations !\n Votre note est de : " + Note + "/20");
-                Application.Exit();
+                FormDijkstra formDijkstra = new FormDijkstra(Note);
+                formDijkstra.Show();
+                //Application.Exit();
             }
             else
             {

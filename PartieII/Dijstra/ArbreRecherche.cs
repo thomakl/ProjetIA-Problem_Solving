@@ -145,7 +145,18 @@ namespace Dijstra {
 
         // Si on veut afficher l'arbre de recherche, il suffit de passer un treeview en paramètres
         // Celui-ci est mis à jour avec les noeuds de la liste des fermés, on ne tient pas compte des ouverts
-        public void GetSearchTree(TreeView TV) {
+        public TreeNode GetSearchTree() {
+            if (L_Fermes == null) return null;
+            if (L_Fermes.Count == 0) return null;
+            
+            TreeNode TN = new TreeNode(L_Fermes[0].ToString());
+
+            AjouteBranche(L_Fermes[0], TN);
+            return TN;
+        }
+
+
+        public void GetSearchTreeVide(TreeView TV) {
             if (L_Fermes == null) return;
             if (L_Fermes.Count == 0) return;
 
@@ -155,16 +166,25 @@ namespace Dijstra {
             TreeNode TN = new TreeNode("?");
             TV.Nodes.Add(TN);
 
-            AjouteBranche(L_Fermes[0], TN);
+            AjouteBrancheVide(L_Fermes[0], TN);
         }
 
 
         // AjouteBranche est exclusivement appelée par GetSearchTree; les noeuds sont ajoutés de manière récursive
         private void AjouteBranche(Noeud GN, TreeNode TN) {
             foreach (Noeud GNfils in GN.Enfants) {
-                TreeNode TNfils = new TreeNode("?");
+                TreeNode TNfils = new TreeNode(GNfils.ToString());
                 TN.Nodes.Add(TNfils);
                 if (GNfils.Enfants.Count > 0) AjouteBranche(GNfils, TNfils);
+            }
+        }
+
+
+        private void AjouteBrancheVide(Noeud GN, TreeNode TN) {
+            foreach (Noeud GNfils in GN.Enfants) {
+                TreeNode TNfils = new TreeNode("?");
+                TN.Nodes.Add(TNfils);
+                if (GNfils.Enfants.Count > 0) AjouteBrancheVide(GNfils, TNfils);
             }
         }
 
