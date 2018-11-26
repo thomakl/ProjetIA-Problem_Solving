@@ -2,6 +2,19 @@
 
 <questionnaire>
   <question>
+    <point>2</point>
+    <titreQuestion>
+      <![CDATA[On considère le code ci-dessous. Remplacer X1 et X2 pour que le pseudo-code de la fonction Alpha-Beta soit correcte.
+		end]]>
+    </titreQuestion>
+    <cheminImage>minmax.png</cheminImage>
+    <proposition>X1 : if α ≤ β then break et X2: if α ≥ β then break</proposition>
+    <proposition>X1 : if α ≤ β then break et X2: if α ≤ β then break</proposition>
+    <proposition>X1 : if α ≥ β then break et X2: if α ≥ β then break</proposition>
+    <proposition>X1 : if α ≥ β then break et X2: if α ≤ β then break</proposition>
+    <reponse>X1 : if α ≥ β then break et X2: if α ≥ β then break</reponse>
+  </question>
+  <question>
     <point>1</point>
     <titreQuestion>Laquelle de ces entreprises a mis au point la première voiture autonome ?</titreQuestion>
     <proposition>Tesla</proposition>
@@ -246,18 +259,6 @@
   </question>
   <question>
     <point>1</point>
-    <titreQuestion>
-        <![CDATA[On considère le code ci-dessous. Remplacer X1 et X2 pour que le pseudo-code de la fonction Alpha-Beta soit correcte.
-		end]]></titreQuestion>
-    <cheminImage>minmax.png</cheminImage>
-    <proposition>X1 : if α ≤ β then break et X2: if α ≥ β then break</proposition>
-    <proposition>X1 : if α ≤ β then break et X2: if α ≤ β then break</proposition>
-    <proposition>X1 : if α ≥ β then break et X2: if α ≥ β then break</proposition>
-    <proposition>X1 : if α ≥ β then break et X2: if α ≤ β then break</proposition>
-    <reponse>X1 : if α ≥ β then break et X2: if α ≥ β then break</reponse>
-  </question>
-  <question>
-    <point>1</point>
     <titreQuestion>A quelle résolution de problème l'algorithme MinMax est-il utile ?</titreQuestion>
     <proposition>aux mots-croisés</proposition>
     <proposition>trouver le plus court chemin</proposition>
@@ -283,25 +284,6 @@
     <proposition>Mutation - Réparation - Selection</proposition>
     <reponse>Mutation - Croisement - Selection</reponse>
   </question>
-  <test>
-    function alphabeta(node, depth, α, β, maximizingPlayer) is
-    if depth = 0 or node is a terminal node then
-    return the heuristic value of node
-    if maximizingPlayer then
-    value := −∞
-    for each child of node do
-    value := max(value, alphabeta(child, depth − 1, α, β, FALSE))
-    α := max(α, value)
-    X1
-    return value
-    else
-    value := +∞
-    for each child of node do
-    value := min(value, alphabeta(child, depth − 1, α, β, TRUE))
-    β := min(β, value)
-    X2
-    return value
-  </test>
 </questionnaire>
 
 
