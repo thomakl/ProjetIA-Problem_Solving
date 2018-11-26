@@ -30,18 +30,27 @@ namespace Questionnaire
             Note = 0;
 
             // Donner une question à QuestionActive
-            RemplirQuestionActive();
+            RemplirQuestionActive(false,0);
 
             // Replir le formulaire
             remplirForm();
 
         }
 
-        public void RemplirQuestionActive()
+        public void RemplirQuestionActive(bool questionSpecifique, int numQuestion)
         {
-            // Création d'un nombre aléatoire qui permettra de choisir une question
             Random r = new Random();
-            int numeroQuestion = r.Next(RecupererNbQuestion());
+            int numeroQuestion;
+            if (questionSpecifique == false)
+            {
+                // Création d'un nombre aléatoire qui permettra de choisir une question       
+                numeroQuestion = r.Next(1, RecupererNbQuestion());
+            }
+            else
+            {
+                numeroQuestion = numQuestion;
+            }
+            
 
             // Chercher un numeroQuestion qui n'a jamais été choisi pour éviter les répétitions        
             while (ListeQuestionsSorties.Contains(numeroQuestion))
@@ -235,17 +244,28 @@ namespace Questionnaire
 
             // Compter le nombre de question déjà réalisées par l'utilisatuer
             // si l'utilisateur a répondu à 20 questions, quitter le form, sinon passer à la question suivante
-            if (ListeQuestionsSorties.Count() == 20)
+            
+            // /!\ Probleme d'affichage de la quesion à 2 pts
+            if (ListeQuestionsSorties.Count() <= 15)
             {
-                FormDijkstra formDijkstra = new FormDijkstra(Note);
-                formDijkstra.Show();
+                // Passer à la question suivante
+                RemplirQuestionActive(false, 0);
+                remplirForm();
+               
             }
             else
             {
-                // Passer à la question suivante
-                RemplirQuestionActive();
+                RemplirQuestionActive(true, 0);
                 remplirForm();
+                FormDijkstra formDijkstra = new FormDijkstra(Note);
+                // Affichage non modal : l'utilisateur doit finir la tâche secondaire pour revenir à la tâche primaire
+                formDijkstra.ShowDialog(this);
+
+                // Si l'utilisateur clic sur valider le Dijkstra, on lui affiche la note
+         
+                
             }
+
         }
 
         private void label1_Click(object sender, EventArgs e)

@@ -70,8 +70,7 @@ namespace Dijstra {
 
         //METHODES
         private void LectureFichier() {
-            StreamReader monStreamReader = new StreamReader("..\\..\\..\\PartieII\\Dijstra\\bin\\Debug\\graphe1.txt"); //à changer plus tard
-
+            StreamReader monStreamReader = new StreamReader("graphDijstra.txt");
             // 1ère ligne : nombre de noeuds du graphe
             string ligne = monStreamReader.ReadLine();
             int i = 0;
