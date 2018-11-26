@@ -8,11 +8,14 @@ using System.Windows.Forms;
 namespace Dijstra {
     class ArbreRecherche {
         //ATTRIBUTS
-        public List<Noeud> L_Ouverts;
-        public List<Noeud> L_Fermes;
+        public List<Noeud> L_Ouverts;           //la liste des noeuds ouverts
+        public List<Noeud> L_Fermes;            //la liste des noeuds fermés  
 
 
         //METHODES
+        /*
+         * Permet de chercher le noeud N dans la liste des noeuds fermés et de le renvoyer
+         */
         private Noeud ChercheNoeudDansFermes(Noeud N) {
             int i = 0;
 
@@ -25,6 +28,9 @@ namespace Dijstra {
         }
 
 
+        /*
+         * Permet de chercher le noeud N dans la liste des noeuds ouverts et de le renvoyer
+         */
         private Noeud ChercheNoeudDansOuverts(Noeud N) {
             int i = 0;
 
@@ -36,98 +42,50 @@ namespace Dijstra {
             return null;
         }
 
+        
 
-        public List<Noeud> RechercheSolutionAEtoile(Noeud N0) {
-            L_Ouverts = new List<Noeud>();
-            L_Fermes = new List<Noeud>();
-            // Le noeud passé en paramètre est supposé être le noeud initial
-            Noeud N = N0;
-            L_Ouverts.Add(N0);
-
-            // tant que le noeud n'est pas terminal et que ouverts n'est pas vide
-            while (L_Ouverts.Count != 0 && N.EtatFinal() == false) {
-                // Le meilleur noeud des ouverts est supposé placé en tête de liste
-                // On le place dans les fermés
-                L_Ouverts.Remove(N);
-                L_Fermes.Add(N);
-
-                // Il faut trouver les noeuds successeurs de N
-                this.MAJSuccesseurs(N);
-                // Inutile de retrier car les insertions ont été faites en respectant l'ordre
-
-                // On prend le meilleur, donc celui en position 0, pour continuer à explorer les états
-                // A condition qu'il existe bien sûr
-                if (L_Ouverts.Count > 0) {
-                    N = L_Ouverts[0];
-                } else {
-                    N = null;
-                }
-            }
-
-            // A* terminé
-            // On retourne le chemin qui va du noeud initial au noeud final sous forme de liste
-            // Le chemin est retrouvé en partant du noeud final et en accédant aux parents de manière
-            // itérative jusqu'à ce qu'on tombe sur le noeud initial
-            List<Noeud> L_Noeuds = new List<Noeud>();
-            if (N != null) {
-                L_Noeuds.Add(N);
-
-                while (N != N0) {
-                    N = N.GetNoeudParent();
-                    L_Noeuds.Insert(0, N);  // On insère en position 1
-                }
-            }
-            return L_Noeuds;
-        }
-
-
+        /*
+         * Permet de mettre à jour les successeurs de N (présent dans son attributs ListSucc)
+         */
         private void MAJSuccesseurs(Noeud N) {
-            // On fait appel à ListeSucc, méthode abstraite qu'on doit réécrire pour chaque
-            // problème. Elle doit retourner la liste complète des noeuds successeurs de N.
             List<Noeud> listsucc = N.ListeSucc();
             foreach (Noeud N2 in listsucc) {
-                // N2 est-il une copie d'un nœud déjà vu et placé dans la liste des fermés ?
                 Noeud N2bis = ChercheNoeudDansFermes(N2);
-                if (N2bis == null) {
-                    // Rien dans les fermés. Est-il dans les ouverts ?
+                if (N2bis == null) { // Rien dans les fermés. Est-il dans les ouverts ?
                     N2bis = ChercheNoeudDansOuverts(N2);
-                    if (N2bis != null) {
-                        // Il existe, donc on l'a déjà vu, N2 n'est qu'une copie de N2Bis
-                        // Le nouveau chemin passant par N est-il meilleur ?
-                        if (N.CoutInit + N.CoutArc(N2) < N2bis.CoutInit) {
-                            // Mise à jour de N2bis
+                    if (N2bis != null) { //N2 est dans les ouverts, le chemin est-il le meilleur ?
+                        if (N.CoutInit + N.CoutArc(N2) < N2bis.CoutInit) { //le chemin est meilleur
                             N2bis.CoutInit = N.CoutInit + N.CoutArc(N2);
-                            // CoutHFin pas recalculé car toujours bon
-                            N2bis.RecalculeCoutTotal(); // somme de CoutInit et CoutHFin
-                            // Mise à jour de la famille ....
+                            N2bis.RecalculeCoutTotal();
                             N2bis.Supprime_Liens_Parent();
                             N2bis.SetNoeudParent(N);
-                            // Mise à jour des ouverts
                             L_Ouverts.Remove(N2bis);
                             this.InsertNouvNoeudLOuverts(N2bis);
                         }
-                        // else on ne fait rien, car le nouveau chemin est moins bon
-                    } else {
-                        // N2 est nouveau, MAJ et insertion dans les ouverts
+                    } else { //N2 n'est ni dans les ouverts, ni dans les fermés : il est nouveau
                         N2.CoutInit = N.CoutInit + N.CoutArc(N2);
                         N2.SetNoeudParent(N);
-                        N2.CalculCoutTotal(); // somme de CoutInit et CoutHFin
+                        N2.CalculCoutTotal();
                         this.InsertNouvNoeudLOuverts(N2);
                     }
                 }
-                // else il est dans les fermés donc on ne fait rien,
-                // car on a déjà trouvé le plus court chemin pour aller en N2
             }
         }
 
 
+
+        /*
+         * Permet d'insérer un nouveau noeud dans la liste des ouverts
+         * L'insertion respecte l'ordre du cout total le plus petit au plus grand
+         */
         public void InsertNouvNoeudLOuverts(Noeud NouvNoeud) {
-            // Insertion pour respecter l'ordre du cout total le plus petit au plus grand
-            if (this.L_Ouverts.Count == 0) { L_Ouverts.Add(NouvNoeud); } else {
+            if (this.L_Ouverts.Count == 0) {
+                L_Ouverts.Add(NouvNoeud);
+            } else {
                 Noeud N = L_Ouverts[0];
                 bool trouve = false;
                 int i = 0;
-                do
+                do {
                     if (NouvNoeud.CoutTotal < N.CoutTotal) {
                         L_Ouverts.Insert(i, NouvNoeud);
                         trouve = true;
@@ -138,7 +96,7 @@ namespace Dijstra {
                             L_Ouverts.Insert(i, NouvNoeud);
                         } else { N = L_Ouverts[i]; }
                     }
-                while ((N != null) && (trouve == false));
+                } while ((N != null) && (trouve == false));
             }
         }
 
@@ -221,10 +179,6 @@ namespace Dijstra {
                 noeudsFermes.Add(new List<Noeud>(L_Fermes));
             }
         }
-
-
-        
-
     }
 }
 

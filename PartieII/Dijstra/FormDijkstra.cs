@@ -29,8 +29,11 @@ namespace Dijstra {
         public FormDijkstra(int note) {
             InitializeComponent();
 
-            //Définition de la note du candidat
+            //Définition de la note du candidat pendant la première partie du questionnaire
             Note = note;
+
+            //1ère étape du joueur
+            this.Etape = 0;
 
             //Lecture de la question
             LectureFichier();
@@ -44,11 +47,6 @@ namespace Dijstra {
             }
             textBoxDepart.Text = NoeudInitial.ToString();
             textBoxArrive.Text = NoeudArrivee.ToString();
-
-
-            //1ère étape du joueur
-            this.Etape = 0;
-
 
             //Résolution du problème
             NoeudsOuverts = new List<List<Noeud>>();
@@ -69,24 +67,32 @@ namespace Dijstra {
 
 
         //METHODES
+        /*
+         * Cette méthode permet de lire le fichier et de construire la matrice en fonction
+         */
         private void LectureFichier() {
-            StreamReader monStreamReader = new StreamReader("..\\..\\..\\PartieII\\Dijstra\\bin\\Debug\\graphe1.txt"); //à changer plus tard
+            StreamReader monStreamReader = new StreamReader("..\\..\\..\\Dijstra\\bin\\Debug\\graphe1.txt"); //à changer plus tard
 
-            // 1ère ligne : nombre de noeuds du graphe
+            // structure de la 1ère ligne : "nombre de noeuds : nbNoeuds"
             string ligne = monStreamReader.ReadLine();
             int i = 0;
+
             while (ligne[i] != ':') {
                 i++;
             }
-            string strNbNoeuds = "";
             i++; // On dépasse le ":"
+
+            // on saute les blancs éventuels
             while (ligne[i] == ' ') {
-                i++; // on saute les blancs éventuels
+                i++;
             }
+
+            string strNbNoeuds = "";
             while (i < ligne.Length) {
                 strNbNoeuds = strNbNoeuds + ligne[i];
                 i++;
             }
+
             NbNoeuds = Convert.ToInt32(strNbNoeuds);
 
             Matrice = new double[NbNoeuds, NbNoeuds];
@@ -97,17 +103,20 @@ namespace Dijstra {
             }
 
             // Ensuite on a la structure suivante : 
-            //  arc : n°noeud départ    n°noeud arrivée  valeur
+            //  nomArc : noeudDépart  noeudArrivée  valeurArc
             ligne = monStreamReader.ReadLine();
             while (ligne != null) {
                 i = 0;
+
                 while (ligne[i] != ':') {
                     i++;
                 }
                 i++; // on passe le :
+
                 while (ligne[i] == ' ') {
                     i++; // on saute les blancs éventuels
                 }
+
                 string strN1 = "";
                 while (ligne[i] != ' ') {
                     strN1 = strN1 + ligne[i];
@@ -116,7 +125,10 @@ namespace Dijstra {
                 int N1 = Convert.ToInt32(strN1);
 
                 // On saute les blancs éventuels
-                while (ligne[i] == ' ') i++;
+                while (ligne[i] == ' ') {
+                    i++;
+                }
+
                 string strN2 = "";
                 while (ligne[i] != ' ') {
                     strN2 = strN2 + ligne[i];
@@ -125,7 +137,10 @@ namespace Dijstra {
                 int N2 = Convert.ToInt32(strN2);
 
                 // On saute les blancs éventuels
-                while (ligne[i] == ' ') i++;
+                while (ligne[i] == ' ') {
+                    i++;
+                }
+
                 string strVal = "";
                 while ((i < ligne.Length) && (ligne[i] != ' ')) {
                     strVal = strVal + ligne[i];
@@ -147,12 +162,11 @@ namespace Dijstra {
         }
 
 
-        private void btnFin_Click(object sender, EventArgs e) {
 
-        }
-
-
-
+        /*
+         * Cette méthode permet de réinitialiser les valeurs des textBoxs 
+         * pour les listes de noeuds fermés et ouverts
+         */
         private void btnInit_Click(object sender, EventArgs e) {
             txtBoxFsaisie.Text = "";
             txtBoxOsaisie.Text = "";
@@ -160,27 +174,31 @@ namespace Dijstra {
 
 
 
+        /*
+         * Cette méthode permet de savoir si les lignes notées pour les listes des noeuds ouvert et fermés est correcte
+         * Permet aussi de contenuer l'exercice et d'incrémenter la note
+         */
         private void btnOk_Click(object sender, EventArgs e) {
             bool premierEssai = true;
 
             if (Etape < NoeudsOuverts.Count() && EstEgal(NoeudsOuverts[Etape], txtBoxOsaisie.Text) && EstEgal(NoeudsFermes[Etape], txtBoxFsaisie.Text)) { //réponse correcte
+                //Ajout des réponses
                 txtBoxFrep.Text += "{" + txtBoxFsaisie.Text + "}\r\n";
                 txtBoxOrep.Text += "{" + txtBoxOsaisie.Text + "}\r\n";
+
+                //Réinitialisation des textBoxs
                 txtBoxFsaisie.Text = "";
                 txtBoxOsaisie.Text = "";
+
                 Etape++;
+
+                //si l'utilisateur est à la dernière étape
                 if (Etape == NoeudsOuverts.Count()) {
                     MessageBox.Show("Tu as réussi !");
-                    lblArbre.Visible = true;
-                    btnInitArbre.Visible = true;
-                    btnOkArbre.Visible = true;
-                    treeViewSaisie.Visible = true;
-                    treeViewSaisie.ExpandAll();
-                    btnAjoutArb.Visible = true;
-                    txtBoxSaisieArb.Visible = true;
-                    btnInit.Visible = false;
-                    btnOk.Visible = false;
 
+                    AfficherPartie2Question();
+
+                    //si l'utilisateur réussi du premier coup il a 2 points sinon il a 1 point
                     if (premierEssai) {
                         Note = Note + 2;
                     } else {
@@ -195,6 +213,11 @@ namespace Dijstra {
         }
 
 
+
+        /*
+         * Permet de tester si une liste de noeuds est égal à un string 
+         * Le string a pour notation : numNoeud, numNoeud, ...
+         */
         private bool EstEgal(List<Noeud> listeNoeuds, string strNoeuds) {
             for (int i = 0; i < strNoeuds.Length; i++) {
                 string strNum = "";
@@ -202,6 +225,7 @@ namespace Dijstra {
                     strNum += strNoeuds[i];
                     i++;
                 }
+
                 while (i < strNoeuds.Length && strNoeuds[i] == ' ') {
                     i++; // on saute les blancs éventuels
                 }
@@ -224,8 +248,7 @@ namespace Dijstra {
                     return false;
                 }
             }
-
-
+            
             if (listeNoeuds.Count() != 0) { //car ça veut dire qu'un noeud de la liste réelle n'a pas été cité dans le string
                 return false;
             } else {
@@ -234,17 +257,53 @@ namespace Dijstra {
         }
 
 
-        private void btnAjoutArb_Click(object sender, EventArgs e) {
 
+        /*
+         * Permet au joueur d'abandonner la première partie de la question s'il le souhaite
+         */
+        private void btnAbandonListe_Click(object sender, EventArgs e) {
+            MessageBox.Show("Tu as abandonné ... \nTu peux quand même essayer la suite !");
+
+            AfficherPartie2Question();
         }
 
+
+
+        /*
+         * Permet d'afficher la deuxième partie de la question
+         */
+         private void AfficherPartie2Question() {
+            //rendre visible la suite de la question
+            lblArbre.Visible = true;
+            lblInstrArbre.Visible = true;
+            txtBoxSaisieArb.Visible = true;
+            treeViewSaisie.Visible = true;
+            treeViewSaisie.ExpandAll();
+            btnOkArbre.Visible = true;
+            btnAbandonArbre.Visible = true;
+
+            //Cacher les boutons précédents
+            btnInit.Visible = false;
+            btnOk.Visible = false;
+            btnAbandonListe.Visible = false;
+         }
+
+
+
+        /*
+         * Pour remplir l'arbre, on saisie une valeur dans une textBox puis on clique sur le noeud que l'on veut modifier
+         */
         private void treeViewSaisie_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e) {
             e.Node.Text = txtBoxSaisieArb.Text;
         }
 
+
+
+        /*
+         * Pour valider l'arbre finale
+         */
         private void btnOkArbre_Click(object sender, EventArgs e) {
-            //TreeNode test = treeViewSaisie.Nodes[0];
-            if (CompareTreeNodes(ArbreCorrige,treeViewSaisie.Nodes[0])) {
+            if (CompareTreeNodes(ArbreCorrige, treeViewSaisie.Nodes[0])) {
                 MessageBox.Show("Tu as réussi !");
                 Note++;
             } else {
@@ -254,6 +313,33 @@ namespace Dijstra {
         }
 
 
+
+        /*
+         * Permet de comparer deux arbres
+         */
+        private bool CompareTreeNodes(TreeNode tn1, TreeNode tn2) {
+            if (tn1 == null || tn2 == null) {
+                return tn1 == tn2;
+            }
+
+            if (tn1.Nodes.Count != tn2.Nodes.Count) {
+                return false;
+            }
+
+            for (int i = 0; i < tn1.Nodes.Count; i++) {
+                if (!CompareRecursiveTree(tn1, tn2)) {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+
+
+        /*
+         * Méthode récursive qui permet de comparer deux arbres
+         */
         private bool CompareRecursiveTree(TreeNode tn1, TreeNode tn2) {
             if (tn1 == null || tn2 == null) {
                 return tn1 == tn2;
@@ -268,30 +354,25 @@ namespace Dijstra {
                     return false;
                 }
             }
-            return true;
-        }
 
-        private bool CompareTreeNodes(TreeNode tn1, TreeNode tn2) {
-            TreeNode tn1_Children1 = tn1;//.Nodes[0];
-            TreeNode tn2_Children2 = tn2;//.Nodes[0];
-
-            if (tn1_Children1 == null || tn2_Children2 == null) {
-                return tn1_Children1 == tn2_Children2;
-            }
-
-            if (tn1_Children1.Nodes.Count != tn2_Children2.Nodes.Count) {
-                return false;
-            }
-
-            for (int i = 0; i < tn1_Children1.Nodes.Count; i++) {
-                if (!CompareRecursiveTree(tn1_Children1, tn2_Children2)) {
-                    return false;
-                }
-            }
             return true;
         }
 
 
+
+        /*
+         * Permet d'abandonner la question
+         */
+        private void btnAbandonArbre_Click(object sender, EventArgs e) {
+            MessageBox.Show("Oh ... Tu as abandonné ...");
+            FermerApp();
+        }
+
+
+
+        /*
+         * Permet de fermer l'application et d'afficher le score
+         */
         public void FermerApp() {
             MessageBox.Show("Félicitations, tu as terminé le test !\n Tu as : " + Note + "/20");
             Application.Exit();

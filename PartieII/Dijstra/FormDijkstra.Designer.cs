@@ -45,9 +45,10 @@
             this.lblArrive = new System.Windows.Forms.Label();
             this.textBoxArrive = new System.Windows.Forms.TextBox();
             this.btnOkArbre = new System.Windows.Forms.Button();
-            this.btnInitArbre = new System.Windows.Forms.Button();
             this.txtBoxSaisieArb = new System.Windows.Forms.TextBox();
-            this.btnAjoutArb = new System.Windows.Forms.Button();
+            this.lblInstrArbre = new System.Windows.Forms.Label();
+            this.btnAbandonListe = new System.Windows.Forms.Button();
+            this.btnAbandonArbre = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtBoxFrep
@@ -102,7 +103,7 @@
             // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(144, 397);
+            this.btnOk.Location = new System.Drawing.Point(156, 368);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(75, 23);
             this.btnOk.TabIndex = 6;
@@ -112,7 +113,7 @@
             // 
             // btnInit
             // 
-            this.btnInit.Location = new System.Drawing.Point(288, 397);
+            this.btnInit.Location = new System.Drawing.Point(272, 368);
             this.btnInit.Name = "btnInit";
             this.btnInit.Size = new System.Drawing.Size(75, 23);
             this.btnInit.TabIndex = 7;
@@ -131,7 +132,7 @@
             // 
             // treeViewSaisie
             // 
-            this.treeViewSaisie.Location = new System.Drawing.Point(313, 466);
+            this.treeViewSaisie.Location = new System.Drawing.Point(334, 432);
             this.treeViewSaisie.Name = "treeViewSaisie";
             this.treeViewSaisie.Size = new System.Drawing.Size(121, 97);
             this.treeViewSaisie.TabIndex = 10;
@@ -141,11 +142,12 @@
             // lblArbre
             // 
             this.lblArbre.AutoSize = true;
-            this.lblArbre.Location = new System.Drawing.Point(46, 489);
+            this.lblArbre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblArbre.Location = new System.Drawing.Point(94, 388);
             this.lblArbre.Name = "lblArbre";
-            this.lblArbre.Size = new System.Drawing.Size(104, 13);
+            this.lblArbre.Size = new System.Drawing.Size(125, 17);
             this.lblArbre.TabIndex = 12;
-            this.lblArbre.Text = "Saisir ici l\'arbre final :";
+            this.lblArbre.Text = "Saisir l\'arbre final :";
             this.lblArbre.Visible = false;
             // 
             // listBoxEnonce
@@ -192,7 +194,7 @@
             // 
             // btnOkArbre
             // 
-            this.btnOkArbre.Location = new System.Drawing.Point(256, 589);
+            this.btnOkArbre.Location = new System.Drawing.Point(308, 551);
             this.btnOkArbre.Name = "btnOkArbre";
             this.btnOkArbre.Size = new System.Drawing.Size(75, 23);
             this.btnOkArbre.TabIndex = 18;
@@ -201,43 +203,54 @@
             this.btnOkArbre.Visible = false;
             this.btnOkArbre.Click += new System.EventHandler(this.btnOkArbre_Click);
             // 
-            // btnInitArbre
-            // 
-            this.btnInitArbre.Location = new System.Drawing.Point(393, 589);
-            this.btnInitArbre.Name = "btnInitArbre";
-            this.btnInitArbre.Size = new System.Drawing.Size(75, 23);
-            this.btnInitArbre.TabIndex = 19;
-            this.btnInitArbre.Text = "Réinitialiser";
-            this.btnInitArbre.UseVisualStyleBackColor = true;
-            this.btnInitArbre.Visible = false;
-            // 
             // txtBoxSaisieArb
             // 
-            this.txtBoxSaisieArb.Location = new System.Drawing.Point(49, 521);
+            this.txtBoxSaisieArb.Location = new System.Drawing.Point(130, 509);
             this.txtBoxSaisieArb.Name = "txtBoxSaisieArb";
             this.txtBoxSaisieArb.Size = new System.Drawing.Size(101, 20);
             this.txtBoxSaisieArb.TabIndex = 20;
             this.txtBoxSaisieArb.Visible = false;
             // 
-            // btnAjoutArb
+            // lblInstrArbre
             // 
-            this.btnAjoutArb.Location = new System.Drawing.Point(169, 519);
-            this.btnAjoutArb.Name = "btnAjoutArb";
-            this.btnAjoutArb.Size = new System.Drawing.Size(28, 23);
-            this.btnAjoutArb.TabIndex = 21;
-            this.btnAjoutArb.Text = "+";
-            this.btnAjoutArb.UseVisualStyleBackColor = true;
-            this.btnAjoutArb.Visible = false;
-            this.btnAjoutArb.Click += new System.EventHandler(this.btnAjoutArb_Click);
+            this.lblInstrArbre.Location = new System.Drawing.Point(104, 423);
+            this.lblInstrArbre.Name = "lblInstrArbre";
+            this.lblInstrArbre.Size = new System.Drawing.Size(169, 71);
+            this.lblInstrArbre.TabIndex = 21;
+            this.lblInstrArbre.Text = "Pour remplir les noeuds de l\'arbre : saisir la valeur dans le champs ci-dessous e" +
+    "t cliquer sur le noeud à modifier directement dans la vue de l\'arbre.";
+            this.lblInstrArbre.Visible = false;
+            // 
+            // btnAbandonListe
+            // 
+            this.btnAbandonListe.Location = new System.Drawing.Point(213, 418);
+            this.btnAbandonListe.Name = "btnAbandonListe";
+            this.btnAbandonListe.Size = new System.Drawing.Size(75, 23);
+            this.btnAbandonListe.TabIndex = 22;
+            this.btnAbandonListe.Text = "Abandonner";
+            this.btnAbandonListe.UseVisualStyleBackColor = true;
+            this.btnAbandonListe.Click += new System.EventHandler(this.btnAbandonListe_Click);
+            // 
+            // btnAbandonArbre
+            // 
+            this.btnAbandonArbre.Location = new System.Drawing.Point(414, 551);
+            this.btnAbandonArbre.Name = "btnAbandonArbre";
+            this.btnAbandonArbre.Size = new System.Drawing.Size(75, 23);
+            this.btnAbandonArbre.TabIndex = 23;
+            this.btnAbandonArbre.Text = "Abandonner";
+            this.btnAbandonArbre.UseVisualStyleBackColor = true;
+            this.btnAbandonArbre.Visible = false;
+            this.btnAbandonArbre.Click += new System.EventHandler(this.btnAbandonArbre_Click);
             // 
             // FormDijkstra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(548, 624);
-            this.Controls.Add(this.btnAjoutArb);
+            this.Controls.Add(this.btnAbandonArbre);
+            this.Controls.Add(this.btnAbandonListe);
+            this.Controls.Add(this.lblInstrArbre);
             this.Controls.Add(this.txtBoxSaisieArb);
-            this.Controls.Add(this.btnInitArbre);
             this.Controls.Add(this.btnOkArbre);
             this.Controls.Add(this.lblArrive);
             this.Controls.Add(this.textBoxArrive);
@@ -281,9 +294,10 @@
         private System.Windows.Forms.Label lblArrive;
         private System.Windows.Forms.TextBox textBoxArrive;
         private System.Windows.Forms.Button btnOkArbre;
-        private System.Windows.Forms.Button btnInitArbre;
         private System.Windows.Forms.TextBox txtBoxSaisieArb;
-        private System.Windows.Forms.Button btnAjoutArb;
+        private System.Windows.Forms.Label lblInstrArbre;
+        private System.Windows.Forms.Button btnAbandonListe;
+        private System.Windows.Forms.Button btnAbandonArbre;
     }
 }
 
