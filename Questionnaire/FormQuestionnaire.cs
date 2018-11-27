@@ -246,17 +246,20 @@ namespace Questionnaire
             // si l'utilisateur a répondu à 20 questions, quitter le form, sinon passer à la question suivante
             
             // /!\ Probleme d'affichage de la quesion à 2 pts
-            if (ListeQuestionsSorties.Count() <= 15)
+            if (ListeQuestionsSorties.Count() < 14)
             {
                 // Passer à la question suivante
                 RemplirQuestionActive(false, 0);
                 remplirForm();
                
             }
-            else
+            else if (ListeQuestionsSorties.Count() == 14) 
             {
                 RemplirQuestionActive(true, 0);
                 remplirForm();
+            }
+            else
+            {
                 FormDijkstra formDijkstra = new FormDijkstra(Note);
                 // Affichage non modal : l'utilisateur doit finir la tâche secondaire pour revenir à la tâche primaire
                 formDijkstra.ShowDialog(this);
