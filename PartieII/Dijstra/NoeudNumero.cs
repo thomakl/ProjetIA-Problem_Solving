@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Dijstra {
     class NoeudNumero : Noeud {
         //ATTRIBUTS
-        public int numero;
+        public int numero;          //le numéro que porte le noeud
 
 
         //CONSTRUCTEURS
@@ -15,23 +15,38 @@ namespace Dijstra {
 
 
         //METHODES
+        /*
+        * Permet de tester si le noeud courant est égal au noeud 
+        */
         public override bool EstEgal(Noeud N) {
             NoeudNumero Nbis = (NoeudNumero) N;
             return numero == Nbis.numero;
         }
 
 
+
+        /*
+         * Cout d'un arc pour aller d'un noeud à un autre
+         */
         public override double CoutArc(Noeud N) {
             NoeudNumero Nbis = (NoeudNumero) N;
             return FormD.Matrice[numero, Nbis.numero];
         }
 
 
+        
+        /*
+         * Regarde si le noeud en cours est le noeud final
+         */
         public override bool EtatFinal() {
             return (numero == FormD.NoeudArrivee);
         }
 
 
+
+        /*
+         * La liste des enfants du noeud en cours
+         */
         public override List<Noeud> ListeSucc() {
             List<Noeud> lsucc = new List<Noeud>();
 
@@ -46,15 +61,21 @@ namespace Dijstra {
         }
 
 
+
+        /*
+         * Cout heuristique pour aller du noeud courant au noeud final
+         */
         public override double CalculeCoutHFin() {
             return (0);
         }
 
 
+
+        /*
+         * Permet d'afficher le numéro du noeud
+         */
         public override string ToString() {
             return Convert.ToString(numero);
         }
-
-
     }
 }

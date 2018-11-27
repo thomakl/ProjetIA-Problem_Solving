@@ -70,7 +70,8 @@ namespace Dijstra {
         /*
          * Cette méthode permet de lire le fichier et de construire la matrice en fonction
          */
-        private void LectureFichier() {
+        private void LectureFichier() {
+
             StreamReader monStreamReader = new StreamReader("graphDijstra.txt");
 
             // structure de la 1ère ligne : "nombre de noeuds : nbNoeuds"

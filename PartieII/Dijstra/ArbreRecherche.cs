@@ -101,8 +101,13 @@ namespace Dijstra {
         }
 
 
-        // Si on veut afficher l'arbre de recherche, il suffit de passer un treeview en paramètres
-        // Celui-ci est mis à jour avec les noeuds de la liste des fermés, on ne tient pas compte des ouverts
+
+        /*
+         * Permet d'obtenir le treeNode résultat
+         * Il est mis à jour avec les noeuds de la liste des fermés, on ne tient pas compte des ouverts
+         * Celui-ci n'est pas affiché dans le treeView mais permet de retourner le treeNode résultat
+         * Si on veut afficher l'arbre de recherche, il suffit de passer un treeview en paramètres
+         */
         public TreeNode GetSearchTree() {
             if (L_Fermes == null) return null;
             if (L_Fermes.Count == 0) return null;
@@ -114,6 +119,11 @@ namespace Dijstra {
         }
 
 
+
+        /*
+         * Permet d'afficher le treeNode pour l'utilisateur dans le treeView 
+         * Ce treeNode contient des ? au lieu des intitulés des noeuds
+         */
         public void GetSearchTreeVide(TreeView TV) {
             if (L_Fermes == null) return;
             if (L_Fermes.Count == 0) return;
@@ -128,7 +138,12 @@ namespace Dijstra {
         }
 
 
-        // AjouteBranche est exclusivement appelée par GetSearchTree; les noeuds sont ajoutés de manière récursive
+
+        /*
+         * AjouteBranche est exclusivement appelée par GetSearchTree; 
+         * les noeuds sont ajoutés de manière récursive
+         * Celui-ci est celui appelé pour avoir le treeNode résultat
+         */        
         private void AjouteBranche(Noeud GN, TreeNode TN) {
             foreach (Noeud GNfils in GN.Enfants) {
                 TreeNode TNfils = new TreeNode(GNfils.ToString());
@@ -138,6 +153,12 @@ namespace Dijstra {
         }
 
 
+
+        /*
+         * AjouteBranche est exclusivement appelée par GetSearchTree; 
+         * les noeuds sont ajoutés de manière récursive
+         * Celui-ci est celui appelé pour avoir le treeNode du joueur
+         */
         private void AjouteBrancheVide(Noeud GN, TreeNode TN) {
             foreach (Noeud GNfils in GN.Enfants) {
                 TreeNode TNfils = new TreeNode("?");
@@ -147,38 +168,32 @@ namespace Dijstra {
         }
 
 
-        //Permet de faire A* mais aussi de conserver tous les états des listes de noeuds ouverts et fermés
+
+        /*
+         * Permet de faire A* mais aussi de conserver tous les états des listes de noeuds ouverts et fermés
+         */
         public void RechercheSolutionAEtoileListe(Noeud N0, List<List<Noeud>> noeudsOuverts, List<List<Noeud>> noeudsFermes) {
             L_Ouverts = new List<Noeud>();
             L_Fermes = new List<Noeud>();
             // Le noeud passé en paramètre est supposé être le noeud initial
             Noeud N = N0;
             L_Ouverts.Add(N0);
-
-            // tant que le noeud n'est pas terminal et que ouverts n'est pas vide
+            
             while (L_Ouverts.Count != 0 && N.EtatFinal() == false) {
-                // Le meilleur noeud des ouverts est supposé placé en tête de liste
-                // On le place dans les fermés
                 L_Ouverts.Remove(N);
                 L_Fermes.Add(N);
-                
-                // Il faut trouver les noeuds successeurs de N
                 this.MAJSuccesseurs(N);
-                // Inutile de retrier car les insertions ont été faites en respectant l'ordre
-                
 
-                // On prend le meilleur, donc celui en position 0, pour continuer à explorer les états
-                // A condition qu'il existe bien sûr
                 if (L_Ouverts.Count > 0) {
                     N = L_Ouverts[0];
                 } else {
                     N = null;
                 }
 
+                //Permet d'ajouter les deux liste des noeuds aux listes des états
                 noeudsOuverts.Add(new List<Noeud>(L_Ouverts));
                 noeudsFermes.Add(new List<Noeud>(L_Fermes));
             }
         }
     }
 }
-

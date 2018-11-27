@@ -213,12 +213,13 @@
             // 
             // lblInstrArbre
             // 
-            this.lblInstrArbre.Location = new System.Drawing.Point(104, 423);
+            this.lblInstrArbre.Location = new System.Drawing.Point(104, 414);
             this.lblInstrArbre.Name = "lblInstrArbre";
-            this.lblInstrArbre.Size = new System.Drawing.Size(169, 71);
+            this.lblInstrArbre.Size = new System.Drawing.Size(169, 88);
             this.lblInstrArbre.TabIndex = 21;
             this.lblInstrArbre.Text = "Pour remplir les noeuds de l\'arbre : saisir la valeur dans le champs ci-dessous e" +
-    "t cliquer sur le noeud à modifier directement dans la vue de l\'arbre.";
+    "t cliquer sur le noeud à modifier directement dans la vue de l\'arbre. Quand tu a" +
+    "s finit clique sur \"Valider\".";
             this.lblInstrArbre.Visible = false;
             // 
             // btnAbandonListe
