@@ -3,9 +3,7 @@
 <questionnaire>
   <question>
     <point>2</point>
-    <titreQuestion>
-      <![CDATA[On considère le code ci-dessous. Remplacer X1 et X2 pour que le pseudo-code de la fonction Alpha-Beta soit correcte.
-		end]]>
+    <titreQuestion>On considère le code ci-dessous. Remplacez X1 et X2 pour que le pseudo-code de la fonction Alpha-Beta soit correcte :
     </titreQuestion>
     <cheminImage>minmax.png</cheminImage>
     <proposition>X1 : if α ≤ β then break et X2: if α ≥ β then break</proposition>
@@ -52,11 +50,11 @@
   </question>
   <question>
     <point>1</point>
-    <titreQuestion>Dans quel contexte utilise-t-on un algorithme MinmAx ?</titreQuestion>
+    <titreQuestion>Dans quel contexte utilise-t-on un algorithme MinMAx ?</titreQuestion>
     <proposition>Lors de l'attribution des tâches dans un planning </proposition>
     <proposition>Lors de la reconnaissance d'image</proposition>
     <proposition>Dans la théorie des jeux</proposition>
-    <proposition>Lors d'un repérage d'élément par apprentissage non supervisé</proposition>
+    <proposition>Lors d'un repérage d'éléments par apprentissage non supervisé</proposition>
     <reponse>Dans la théorie des jeux</reponse>
   </question>
   <question>
@@ -79,7 +77,7 @@
   </question>
   <question>
     <point>1</point>
-    <titreQuestion>Qu'est-ce qu'un amer ? </titreQuestion>
+    <titreQuestion>Qu'est-ce qu'un amèr ? </titreQuestion>
     <proposition>Un guide dans l'environnement du robot</proposition>
     <proposition>Un obstacle que le robot doit éviter</proposition>
     <proposition>Une manette qui permet de contrôler un robot</proposition>
@@ -97,7 +95,7 @@
   </question>
   <question>
     <point>1</point>
-    <titreQuestion>Parmis les tâches suivantes, laquelle ne peut pas être effectuée par une IA ?</titreQuestion>
+    <titreQuestion>Parmi les tâches suivantes, laquelle ne peut pas être effectuée par une IA ?</titreQuestion>
     <proposition>Perception visuelle</proposition>
     <proposition>Reconnaissance de voix</proposition>
     <proposition>Prise de décision</proposition>
@@ -124,7 +122,7 @@
   </question>
   <question>
     <point>1</point>
-    <titreQuestion>Parmis les capteurs suivants, lequel permet de calculer la distance entre un robot et les objets environnants ? </titreQuestion>
+    <titreQuestion>Parmi les capteurs suivants, lequel permet de calculer la distance entre un robot et les objets environnants ? </titreQuestion>
     <proposition>LIDAR</proposition>
     <proposition>GPS</proposition>
     <proposition>Gyromètre</proposition>
@@ -187,7 +185,7 @@
   </question>
   <question>
     <point>1</point>
-    <titreQuestion>Parmis les propositions suivantes, quelle est la tâche mieux réalisépar les hommes que par les ordinateurs ? </titreQuestion>
+    <titreQuestion>Parmis les propositions suivantes, quelle est la tâche mieux réalisé par les hommes, que par les ordinateurs ? </titreQuestion>
     <proposition>Reconnaître l'importance relative</proposition>
     <proposition>Trouver des similitudes</proposition>
     <proposition>Résoudre des ambiguïtés</proposition>
@@ -214,7 +212,7 @@
   </question>
   <question>
     <point>1</point>
-    <titreQuestion>Dans quel cas un problème de satisfaction des contraintes est-il dit "consistant" ? </titreQuestion>
+    <titreQuestion>Dans quel cas, un problème de satisfaction des contraintes est-il dit "consistant" ? </titreQuestion>
     <proposition>S'il existe une affectation de ses variables qui vérifient toutes les contraintes</proposition>
     <proposition>S'il n'existe pas une affectation de ses variables qui vérifient toutes les contraintes</proposition>
     <proposition>S'il existe des contraintes contradictoires</proposition>
@@ -223,21 +221,21 @@
   </question>
   <question>
     <point>1</point>
-    <titreQuestion>En CSP (Resolution de problème par contrainte), qu'est ce qu'une contrainte faible ?</titreQuestion>
-    <proposition>Une contrainte faible est une contrainte qui peut être violé</proposition>
+    <titreQuestion>En CSP (Resolution de problèmes par contrainte), qu'est ce qu'une contrainte faible ?</titreQuestion>
+    <proposition>Une contrainte faible est une contrainte qui peut être violée</proposition>
     <proposition>Une contrainte qui n'induit peu d'erreur</proposition>
     <proposition>Une contrainte qui n'apporte pas beaucoup de pertinence</proposition>
      <proposition>Une contrainte qui n'apporte pas beaucoup de précision</proposition>
-    <reponse>Une contrainte faible est une contrainte qui peut être violé</reponse>
+    <reponse>Une contrainte faible est une contrainte qui peut être violée</reponse>
   </question>
   <question>
     <point>1</point>
     <titreQuestion>Qu'est ce qu'un degrée de liberté en robotitque ?</titreQuestion>
     <proposition>La portée à laquelle le robot peut s'éloigner du contrôleur</proposition>
-      <proposition>le nombre d'axe de rotation que le robot a à sa disposition</proposition>
+      <proposition>le nombre d'axe de rotation que le robot a à sa disposition pour bouger</proposition>
     <proposition>Le nombre de language compris par le robot</proposition>
     <proposition>Le nombre de loi soumis au robot</proposition>
-    <reponse>le nombre d'axe de rotation que le robot a à sa disposition</reponse>
+    <reponse>le nombre d'axe de rotation que le robot a à sa disposition pour bouger</reponse>
   </question>
   <question>
     <point>1</point>
@@ -260,11 +258,11 @@
   <question>
     <point>1</point>
     <titreQuestion>A quelle résolution de problème l'algorithme MinMax est-il utile ?</titreQuestion>
-    <proposition>aux mots-croisés</proposition>
-    <proposition>trouver le plus court chemin</proposition>
-    <proposition>au puissance 4</proposition>
-    <proposition>au jeu du taquin</proposition>
-    <reponse>au puissance 4</reponse>
+    <proposition>Aux mots-croisés</proposition>
+    <proposition>Trouver le plus court chemin</proposition>
+    <proposition>Au puissance 4</proposition>
+    <proposition>Au jeu du taquin</proposition>
+    <reponse>Au puissance 4</reponse>
   </question>
   <question>
     <point>1</point>

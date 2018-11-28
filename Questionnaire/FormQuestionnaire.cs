@@ -160,10 +160,12 @@ namespace Questionnaire
                 imgBox.Hide();
             }
 
-            radioBtt_reponse1.Text = QuestionActive.Liste_reponses[0].Enonce_reponse;
-            radioBtt_reponse2.Text = QuestionActive.Liste_reponses[1].Enonce_reponse;
-            radioBtt_reponse3.Text = QuestionActive.Liste_reponses[2].Enonce_reponse;
-            radioBtt_reponse4.Text = QuestionActive.Liste_reponses[3].Enonce_reponse;
+            lbl_reponse1.Text = QuestionActive.Liste_reponses[0].Enonce_reponse;
+            lbl_reponse_2.Text = QuestionActive.Liste_reponses[1].Enonce_reponse;
+            lbl_reponse_3.Text = QuestionActive.Liste_reponses[2].Enonce_reponse;
+            //radioBtt_reponse4.Text = QuestionActive.Liste_reponses[3].Enonce_reponse;
+            label1.Text = QuestionActive.Liste_reponses[3].Enonce_reponse;
+
 
             // Décocher les reponse lors de l'initialisation de la question
             radioBtt_reponse1.Checked = false;
@@ -176,12 +178,12 @@ namespace Questionnaire
 
         private void lbl_question_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void radioBtt_reponse1_CheckedChanged(object sender, EventArgs e)
         {
-
+ 
         }
 
         private void radioBtt_reponse2_CheckedChanged(object sender, EventArgs e)
@@ -196,7 +198,7 @@ namespace Questionnaire
 
         private void radioBtt_reponse4_CheckedChanged(object sender, EventArgs e)
         {
-
+        
         }
 
         private void btt_validation_Click(object sender, EventArgs e)
@@ -282,6 +284,26 @@ namespace Questionnaire
         }
 
         private void imgBox_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_reponse1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_reponse_2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_reponse_3_Click(object sender, EventArgs e)
         {
 
         }
