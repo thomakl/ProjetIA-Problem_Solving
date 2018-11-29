@@ -378,5 +378,10 @@ namespace Dijstra {
             MessageBox.Show("Félicitations, tu as terminé le test !\n Tu as : " + Note + "/20");
             Application.Exit();
         }
+
+        private void lblInstrArbre_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

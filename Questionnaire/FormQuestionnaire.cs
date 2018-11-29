@@ -124,7 +124,7 @@ namespace Questionnaire
             catch (Exception e)
             { }
             
-            // Implémentation de QuestionActive avec les paramètres obtenus
+            // Instanciation de QuestionActive avec les paramètres obtenus
             QuestionActive = new Question(titreQuestion.InnerText, r1, r2, r3, r4, NbPoint, CheminImage);
         }
 
@@ -176,52 +176,27 @@ namespace Questionnaire
            
         }
 
-        private void lbl_question_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void radioBtt_reponse1_CheckedChanged(object sender, EventArgs e)
-        {
- 
-        }
-
-        private void radioBtt_reponse2_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioBtt_reponse3_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioBtt_reponse4_CheckedChanged(object sender, EventArgs e)
-        {
-        
-        }
-
         private void btt_validation_Click(object sender, EventArgs e)
         {
             // Vérifier la validité de la réponse de l'utilisateur et le corriger s'il a eu faux
             if (radioBtt_reponse1.Checked && QuestionActive.Liste_reponses[0].veracite == 1)
             {
-                MessageBox.Show("Vous avez trouvez la bonne réponse");
+                MessageBox.Show("Vous avez trouvé la bonne réponse");
                 Note = Note + QuestionActive.NbPoint;
             }
             else if (radioBtt_reponse2.Checked && QuestionActive.Liste_reponses[1].veracite == 1)
             {
-                MessageBox.Show("Vous avez trouvez la bonne réponse");
+                MessageBox.Show("Vous avez trouvé la bonne réponse");
                 Note = Note + QuestionActive.NbPoint;
             }
             else if (radioBtt_reponse3.Checked && QuestionActive.Liste_reponses[2].veracite == 1)
             {
-                MessageBox.Show("Vous avez trouvez la bonne réponse");
+                MessageBox.Show("Vous avez trouvé la bonne réponse");
                 Note = Note + QuestionActive.NbPoint;
             }
             else if (radioBtt_reponse4.Checked && QuestionActive.Liste_reponses[3].veracite == 1)
             {
-                MessageBox.Show("Vous avez trouvez la bonne réponse");
+                MessageBox.Show("Vous avez trouvé la bonne réponse");
                 Note = Note + QuestionActive.NbPoint;
             }
             else
@@ -241,7 +216,7 @@ namespace Questionnaire
                 }
                 numReponseJuste = numReponseJuste + 1;
 
-                MessageBox.Show("Vous avez échouez... La bonne réponse était la réponse " + numReponseJuste + " :\n" + QuestionActive.Liste_reponses[numReponseJuste - 1].Enonce_reponse);
+                MessageBox.Show("Vous avez échoué... La bonne réponse était la réponse " + numReponseJuste + " :\n" + QuestionActive.Liste_reponses[numReponseJuste - 1].Enonce_reponse);
             }
 
             // Compter le nombre de question déjà réalisées par l'utilisatuer
@@ -264,47 +239,8 @@ namespace Questionnaire
             {
                 FormDijkstra formDijkstra = new FormDijkstra(Note);
                 // Affichage non modal : l'utilisateur doit finir la tâche secondaire pour revenir à la tâche primaire
-                formDijkstra.ShowDialog(this);
-
-                // Si l'utilisateur clic sur valider le Dijkstra, on lui affiche la note
-         
-                
+                formDijkstra.ShowDialog(this);        
             }
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl_numQuestion_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void imgBox_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl_reponse1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl_reponse_2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl_reponse_3_Click(object sender, EventArgs e)
-        {
 
         }
     }

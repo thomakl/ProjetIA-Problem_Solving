@@ -14,7 +14,7 @@
   </question>
   <question>
     <point>1</point>
-    <titreQuestion>Laquelle de ces entreprises a mis au point la première voiture autonome ?</titreQuestion>
+    <titreQuestion>Laquelles de ces entreprises a mis au point la première voiture autonome ?</titreQuestion>
     <proposition>Tesla</proposition>
     <proposition>Google</proposition>
     <proposition>La voiture pleinement autonome n'existe pas</proposition>
@@ -50,7 +50,7 @@
   </question>
   <question>
     <point>1</point>
-    <titreQuestion>Dans quel contexte utilise-t-on un algorithme MinMAx ?</titreQuestion>
+    <titreQuestion>Dans quel contexte utilise-t-on un algorithme MinMax ?</titreQuestion>
     <proposition>Lors de l'attribution des tâches dans un planning </proposition>
     <proposition>Lors de la reconnaissance d'image</proposition>
     <proposition>Dans la théorie des jeux</proposition>
@@ -59,7 +59,7 @@
   </question>
   <question>
     <point>1</point>
-    <titreQuestion>Donner un exemple de capteur permettant d'obtenir des informations propioceptives : </titreQuestion>
+    <titreQuestion>Donner un exemple de capteur permettant d'obtenir des informations proprioceptives : </titreQuestion>
     <proposition>LIDAR</proposition>
     <proposition>Odomètre</proposition>
     <proposition>Gyromètre</proposition>
@@ -68,7 +68,7 @@
   </question>
   <question>
     <point>1</point>
-    <titreQuestion>Donner un exemple de capteur permettant d'obtenir des informations extéroceptive : </titreQuestion>
+    <titreQuestion>Donner un exemple de capteur permettant d'obtenir des informations extéroceptives : </titreQuestion>
     <proposition>Niveau de charge de batterie</proposition>
     <proposition>Odomètre</proposition>
     <proposition>Accéléromètre</proposition>
@@ -77,7 +77,7 @@
   </question>
   <question>
     <point>1</point>
-    <titreQuestion>Qu'est-ce qu'un amèr ? </titreQuestion>
+    <titreQuestion>Qu'est-ce qu'un amer ? </titreQuestion>
     <proposition>Un guide dans l'environnement du robot</proposition>
     <proposition>Un obstacle que le robot doit éviter</proposition>
     <proposition>Une manette qui permet de contrôler un robot</proposition>
@@ -131,8 +131,8 @@
   </question>
   <question>
     <point>1</point>
-    <titreQuestion>Quelle est a définition d'une IA Forte ? </titreQuestion>
-    <proposition>Un ensemble de programme informatique qui produisent des résultats qui seraient considérés comme reflétant l'intelligence s'il étaient généréspar des humains</proposition>
+    <titreQuestion>Quelle est la définition d'une IA Forte ? </titreQuestion>
+    <proposition>Un ensemble de programmes informatiques qui produisent des résultats qui seraient considérés comme reflétant l'intelligence s'ils étaient générés par des humains</proposition>
     <proposition>Un programme avec autant de conscience et de personnalité que des humains</proposition>
     <proposition>L'étude des facultés mentales par l'utilisation de modèles mentaux mis en oeuvre sur ordinateur</proposition>
     <proposition>Toutes les réponses</proposition>
@@ -140,7 +140,7 @@
   </question>
   <question>
     <point>1</point>
-    <titreQuestion>Quelle est a définition d'une IA Faible ? </titreQuestion>
+    <titreQuestion>Quelle est la définition d'une IA Faible ? </titreQuestion>
     <proposition>Un programme avec un taux de prédiction faible</proposition>
     <proposition>L'incarnation des capacités intellectuelles humaines dans un ordinateur</proposition>
     <proposition>Un programme théoriquement capable de générer l'intelligence et la conscience mais en pratique impossible à concevoir</proposition>
@@ -162,13 +162,13 @@
     <proposition>Les robots peuvent transmettre des images en temps réel vers un serveur distant pour les analyser</proposition>
     <proposition>Des ordinateurs comprennent les images numériques et peuvent convertir les données d'un monde réel vers une version numérique et symbolique d'information</proposition>
     <proposition>Des ordinateurs apprennent sans être explicitement programmés</proposition>
-    <proposition>Les robots ont la capacité d'intercation avec les langues huamines et arrivent à comprendre</proposition>
+    <proposition>Les robots ont la capacité d'interaction avec les langues humaines et arrivent à comprendre</proposition>
     <reponse>Des ordinateurs comprennent les images numériques et peuvent convertir les données d'un monde réel vers une version numérique et symbolique d'information</reponse>
   </question>
   <question>
     <point>1</point>
-    <titreQuestion>Parmis les domaines suivants, lesquels ont permis un pic de l'intelligence artificielle ? </titreQuestion>
-    <proposition>La plannification</proposition>
+    <titreQuestion>Parmi les domaines suivants, lequel a permis un essor de l'intelligence artificielle ? </titreQuestion>
+    <proposition>La planification</proposition>
     <proposition>Les jeux vidéos</proposition>
     <proposition>La robotique</proposition>
     <proposition>Toutes les réponses</proposition>
@@ -185,7 +185,7 @@
   </question>
   <question>
     <point>1</point>
-    <titreQuestion>Parmis les propositions suivantes, quelle est la tâche mieux réalisé par les hommes, que par les ordinateurs ? </titreQuestion>
+    <titreQuestion>Parmi les propositions suivantes, quelle est la tâche qui est la mieux réalisée par les hommes que par les ordinateurs ? </titreQuestion>
     <proposition>Reconnaître l'importance relative</proposition>
     <proposition>Trouver des similitudes</proposition>
     <proposition>Résoudre des ambiguïtés</proposition>
@@ -194,62 +194,53 @@
   </question>
   <question>
     <point>1</point>
-    <titreQuestion>Le but de l'IA est-il de construire des systèmes qui présentent un comportement intelligent ? </titreQuestion>
-    <proposition>Oui</proposition>
-    <proposition>Non</proposition>
-    <proposition>Peut-être</proposition>
-    <proposition>Je ne sais pas</proposition>
-    <reponse>Oui</reponse>
-  </question>
-  <question>
-    <point>1</point>
     <titreQuestion>En quoi le langage humain est-il pragmatique ?</titreQuestion>
     <proposition>Il possède un ensemble fermé de mots autorisés</proposition>
     <proposition>Il doit se plier à des règles pour obtenir des phrases correctes</proposition>
-    <proposition>La pertinance de ce qui est dit est relative au contexte et à l'enchainement des idées</proposition>
+    <proposition>La pertinence de ce qui est dit est relative au contexte et à l'enchainement des idées</proposition>
     <proposition>Le sens des phrases est produit relativement aux connaissances universelles, aux lois universelles, à l'expérience commune et aux attendus sociaux-culturels</proposition>
-    <reponse>La pertinance de ce qui est dit est relative au contexte et à l'enchainement des idées</reponse>
+    <reponse>La pertinence de ce qui est dit est relative au contexte et à l'enchainement des idées</reponse>
   </question>
   <question>
     <point>1</point>
-    <titreQuestion>Dans quel cas, un problème de satisfaction des contraintes est-il dit "consistant" ? </titreQuestion>
-    <proposition>S'il existe une affectation de ses variables qui vérifient toutes les contraintes</proposition>
-    <proposition>S'il n'existe pas une affectation de ses variables qui vérifient toutes les contraintes</proposition>
+    <titreQuestion>Dans quel cas un problème de satisfaction des contraintes est-il dit "consistant" ? </titreQuestion>
+    <proposition>S'il existe une affectation de ses variables qui vérifie toutes les contraintes</proposition>
+    <proposition>S'il n'existe pas une affectation de ses variables qui vérifie toutes les contraintes</proposition>
     <proposition>S'il existe des contraintes contradictoires</proposition>
     <proposition>S'il existe une affectation de ses variables qui ne vérifie aucune contrainte</proposition>
     <reponse>S'il existe une affectation de ses variables qui vérifient toutes les contraintes</reponse>
   </question>
   <question>
     <point>1</point>
-    <titreQuestion>En CSP (Resolution de problèmes par contrainte), qu'est ce qu'une contrainte faible ?</titreQuestion>
-    <proposition>Une contrainte faible est une contrainte qui peut être violée</proposition>
-    <proposition>Une contrainte qui n'induit peu d'erreur</proposition>
-    <proposition>Une contrainte qui n'apporte pas beaucoup de pertinence</proposition>
+    <titreQuestion>En CSP (Résolution de problèmes par contrainte), qu'est-ce qu'une contrainte faible ?</titreQuestion>
+    <proposition>Une contrainte qui peut être violée</proposition>
+    <proposition>Une contrainte qui induit peu d'erreur</proposition>
+    <proposition>Une contrainte qui n'apporte pas de forte restriction</proposition>
      <proposition>Une contrainte qui n'apporte pas beaucoup de précision</proposition>
-    <reponse>Une contrainte faible est une contrainte qui peut être violée</reponse>
+    <reponse>Une contrainte qui peut être violée</reponse>
   </question>
   <question>
     <point>1</point>
-    <titreQuestion>Qu'est ce qu'un degrée de liberté en robotitque ?</titreQuestion>
+    <titreQuestion>Qu'est-ce qu'un degré de liberté en robotique ?</titreQuestion>
     <proposition>La portée à laquelle le robot peut s'éloigner du contrôleur</proposition>
-      <proposition>le nombre d'axe de rotation que le robot a à sa disposition pour bouger</proposition>
-    <proposition>Le nombre de language compris par le robot</proposition>
+      <proposition>Le nombre d'axe de rotation que le robot a à sa disposition pour bouger</proposition>
+    <proposition>Le nombre de langage compris par le robot</proposition>
     <proposition>Le nombre de loi soumis au robot</proposition>
-    <reponse>le nombre d'axe de rotation que le robot a à sa disposition pour bouger</reponse>
+    <reponse>Le nombre d'axe de rotation que le robot a à sa disposition pour bouger</reponse>
   </question>
   <question>
     <point>1</point>
-    <titreQuestion>Quel est le principe de fonctionement du capteur ultrason ?</titreQuestion>
-    <proposition>Emmission d'une radiofréquence rapide par un emmeteur</proposition>
-    <proposition>Emmission d'une son rapide par un emmeteur</proposition>
-    <proposition>Emmission d'une lumière rapide par un emmeteur</proposition>
-    <proposition>Emmission d'une signal rapide par un emmeteur</proposition>
-    <reponse>Emmission d'une son rapide par un emmeteur</reponse>
+    <titreQuestion>Quel est le principe de fonctionnement du capteur ultrason ?</titreQuestion>
+    <proposition>Emission d'une radiofréquence rapide par un émeteur</proposition>
+    <proposition>Emission d'une son rapide par un émeteur</proposition>
+    <proposition>Emission d'une lumière rapide par un émeteur</proposition>
+    <proposition>Emmission d'une signal rapide par un émeteur</proposition>
+    <reponse>Emission d'une son rapide par un émeteur</reponse>
   </question>
   <question>
     <point>1</point>
     <titreQuestion>Quelles sont les désavantages du capteur ultrason ?</titreQuestion>
-    <proposition>La fréquence emise par le capteur utltrason est proche d'un contrôleur radio émis par le robot</proposition>
+    <proposition>La fréquence émise par le capteur ultrason est proche d'un contrôleur radio émis par le robot</proposition>
     <proposition>La distance maximale n'est que d'une centaine de mètres</proposition>
     <proposition>La forme des obstacles peut causer une déformation de la vision du robot de son environnement</proposition>
     <proposition>Toutes les réponses sont correctes</proposition>
@@ -266,7 +257,7 @@
   </question>
   <question>
     <point>1</point>
-    <titreQuestion>Quel est l'avantage de l'utilisation de la méthode "Alpha-Beta" dans un alogrithme MinMax ?</titreQuestion>
+    <titreQuestion>Quel est l'avantage de l'utilisation de la méthode "Alpha-Beta" dans un algorithme MinMax ?</titreQuestion>
     <proposition>Il nous donne le plus court chemin dès la première passe</proposition>
     <proposition>Il réduit le nombre de noeud à vérifier</proposition>
     <proposition>Il implémente la méthode "First-In First-Out"</proposition>
@@ -276,10 +267,10 @@
   <question>
     <point>1</point>
     <titreQuestion>Quelles sont les étapes majeures de l'algorithme génétique ?</titreQuestion>
-    <proposition>Mutation - Croisement - Selection</proposition>
-    <proposition>Selection - Reproduction - Mutation</proposition>
-    <proposition>Hybridiation - Recombination - Croisement </proposition>
-    <proposition>Mutation - Réparation - Selection</proposition>
+    <proposition>Mutation - Croisement - Sélection</proposition>
+    <proposition>Sélection - Reproduction - Mutation</proposition>
+    <proposition>Hybridation - Recombination - Croisement </proposition>
+    <proposition>Mutation - Réparation - Sélection</proposition>
     <reponse>Mutation - Croisement - Selection</reponse>
   </question>
 </questionnaire>

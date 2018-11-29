@@ -223,6 +223,7 @@
     "t cliquer sur le noeud à modifier directement dans la vue de l\'arbre. Quand tu a" +
     "s finit clique sur \"Valider\".";
             this.lblInstrArbre.Visible = false;
+            this.lblInstrArbre.Click += new System.EventHandler(this.lblInstrArbre_Click);
             // 
             // btnAbandonListe
             // 
