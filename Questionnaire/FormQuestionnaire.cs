@@ -223,14 +223,14 @@ namespace Questionnaire
             // si l'utilisateur a répondu à 20 questions, quitter le form, sinon passer à la question suivante
             
             // /!\ Probleme d'affichage de la quesion à 2 pts
-            if (ListeQuestionsSorties.Count() < 14)
+            if (ListeQuestionsSorties.Count() < 15)
             {
                 // Passer à la question suivante
                 RemplirQuestionActive(false, 0);
                 remplirForm();
                
             }
-            else if (ListeQuestionsSorties.Count() == 14) 
+            else if (ListeQuestionsSorties.Count() == 15) 
             {
                 RemplirQuestionActive(true, 0);
                 remplirForm();

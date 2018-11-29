@@ -99,8 +99,8 @@
     <proposition>Perception visuelle</proposition>
     <proposition>Reconnaissance de voix</proposition>
     <proposition>Prise de décision</proposition>
-    <proposition>Auncune des réponses</proposition>
-    <reponse>Auncune des réponses</reponse>
+    <proposition>Aucune des réponses</proposition>
+    <reponse>Aucune des réponses</reponse>
   </question>
   <question>
     <point>1</point>
@@ -208,7 +208,7 @@
     <proposition>S'il n'existe pas une affectation de ses variables qui vérifie toutes les contraintes</proposition>
     <proposition>S'il existe des contraintes contradictoires</proposition>
     <proposition>S'il existe une affectation de ses variables qui ne vérifie aucune contrainte</proposition>
-    <reponse>S'il existe une affectation de ses variables qui vérifient toutes les contraintes</reponse>
+    <reponse>S'il existe une affectation de ses variables qui vérifie toutes les contraintes</reponse>
   </question>
   <question>
     <point>1</point>
@@ -223,10 +223,10 @@
     <point>1</point>
     <titreQuestion>Qu'est-ce qu'un degré de liberté en robotique ?</titreQuestion>
     <proposition>La portée à laquelle le robot peut s'éloigner du contrôleur</proposition>
-      <proposition>Le nombre d'axe de rotation que le robot a à sa disposition pour bouger</proposition>
+      <proposition>Le nombre d'axes de rotation que le robot a à sa disposition pour bouger</proposition>
     <proposition>Le nombre de langage compris par le robot</proposition>
     <proposition>Le nombre de loi soumis au robot</proposition>
-    <reponse>Le nombre d'axe de rotation que le robot a à sa disposition pour bouger</reponse>
+    <reponse>Le nombre d'axes de rotation que le robot a à sa disposition pour bouger</reponse>
   </question>
   <question>
     <point>1</point>
@@ -234,7 +234,7 @@
     <proposition>Emission d'une radiofréquence rapide par un émeteur</proposition>
     <proposition>Emission d'une son rapide par un émeteur</proposition>
     <proposition>Emission d'une lumière rapide par un émeteur</proposition>
-    <proposition>Emmission d'une signal rapide par un émeteur</proposition>
+    <proposition>Emission d'une signal rapide par un émeteur</proposition>
     <reponse>Emission d'une son rapide par un émeteur</reponse>
   </question>
   <question>
@@ -271,7 +271,7 @@
     <proposition>Sélection - Reproduction - Mutation</proposition>
     <proposition>Hybridation - Recombination - Croisement </proposition>
     <proposition>Mutation - Réparation - Sélection</proposition>
-    <reponse>Mutation - Croisement - Selection</reponse>
+    <reponse>Mutation - Croisement - Sélection</reponse>
   </question>
 </questionnaire>
 
